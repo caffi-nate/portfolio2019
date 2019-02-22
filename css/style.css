@@ -1,41 +1,80 @@
 @font-face {
-  font-family: "P5hatty";
-  src: url(../fonts/p5hatty.ttf);
+  font-family: "PoetsenOne";
+  src: url(../fonts/PoetsenOne-Regular.ttf);
 }
 
 @font-face {
-  font-family: "earwig-factory";
-  src: url(../fonts/earwig-factory.ttf);
+  font-family: "RalphieBrown";
+  src: url(../fonts/valentine.ttf);
+}
+
+@font-face {
+  font-family: "PixelFont";
+  src: url(../fonts/yoshi.ttf);
+}
+
+@font-face {
+  font-family: "Brushy";
+  src: url(../fonts/bernadette_rough.ttf);
+}
+
+@font-face {
+  font-family: "Coolvetica";
+  src: url(../fonts/coolveticaRG.ttf);
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: #000000;
+  background: rgba(1, 1, 1, 0);
+}
+
+::selection {
+  color: #000000;
+  background: rgba(1, 1, 1, 0);
 }
 
 * {
   margin: 0px;
   padding: 0px;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
 }
 
 h1 {
-  font-size: 3em;
-  text-align: center;
+  font-size: 5em;
+  font-family: "PoetsenOne", sans-serif;
 }
 
 h2 {
-  font-size: 2em;
-  text-align: center;
+  font-size: 3em;
+  font-family: "RalphieBrown", sans-serif;
+  font-family: "Brushy", sans-serif;
 }
 
 h3 {
   text-align: center;
-  font-size: 2em;
+  font-size: 4em;
+  font-family: "PoetsenOne", sans-serif;
   padding: 20px;
 }
 
 h4 {
+  font-family: "RalphieBrown", sans-serif;
+  font-size: 3em;
+  font-family: "PoetsenOne", sans-serif;
+  font-size: 1.5em;
   padding: 1em;
 }
 
+p {
+  font-size: 22px;
+  line-height: 1.6em;
+  padding: 0.5em;
+}
+
 body {
-  background-color: purple;
+  background-color: #332272;
   color: white;
 }
 
@@ -53,13 +92,12 @@ section {
 }
 
 .content-container {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 50vw;
   border: 1px solid yellow;
 }
 
 #projects {
-  background: orange;
+  background: #efb2ba;
 }
 
 #projects ul {
@@ -72,11 +110,11 @@ section {
 }
 
 #projects li {
-  background: teal;
+  background: #a044a9;
 }
 
 #tools {
-  background: blue;
+  background: #85b2d9;
 }
 
 #tools h4 {
@@ -122,11 +160,11 @@ section {
 }
 
 #about {
-  background: green;
+  background: #6bd8b8;
 }
 
 #contact {
-  background: pink;
+  background: #fdaf4b;
 }
 
 @keyframes shake {
@@ -163,4 +201,16 @@ section {
   100% {
     transform: translate(1px, -1px) rotate(0deg);
   }
+}
+
+footer {
+  height: 20vh;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+footer p {
+  text-align: center;
+  font-size: 0.8em;
 }

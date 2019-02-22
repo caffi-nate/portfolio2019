@@ -3,3 +3,16 @@
     //zoom: (#{$amount}); //rotate(20deg);
     -moz-transform: scale((#{$amount})) rotate(15deg);
 }
+
+
+@mixin selection($color, $background){
+    ::-moz-selection { /* Code for Firefox */
+      color: $color;
+      background: $background;
+    }
+
+    ::selection {
+      color: $color;
+      background: $background;
+    }
+}

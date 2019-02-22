@@ -2,32 +2,62 @@
 @import "mixins";
 @import "fonts";
 
+//custom style any time the user tries to highlight text, removes background colour
+@include selection(#000000,rgba(1,1,1,0));
+
 * {
     margin: 0px;
     padding: 0px;
+    font-family: "Source Sans Pro", sans-serif;
     font-size: 16px;
 }
 
 h1 {
-    font-size: 3em;
-    text-align: center;
+    font-size: 5em;
+    font-family: "PoetsenOne", sans-serif;
 
+
+    //text-align: center;
 }
 h2 {
-    font-size: 2em;
-    text-align: center;
+    font-size: 3em;
+    font-family: "RalphieBrown", sans-serif;
+    font-family: "Brushy", sans-serif;
+    //font-family: "PixelFont", sans-serif;
+    //text-align: center;
 }
 h3 {
+
     text-align: center;
-    font-size: 2em;
+    font-size: 4em; // was 3em;
+    font-family: "PoetsenOne", sans-serif;
+
+    //font-family: "Brushy", sans-serif;
+    //font-size: 5em;
     padding: 20px;
+    //font-family: "RalphieBrown", sans-serif;
+    //font-size: 5em;
 }
 h4 {
+
+    font-family: "RalphieBrown", sans-serif;
+    font-size: 3em;
+    font-family: "PoetsenOne", sans-serif;
+
+    font-size: 1.5em;
+    //font-family: "Brushy", sans-serif;
+    //font-size: 2.5em;
     padding: 1em;
+}
+p {
+    //font-family: "Coolvetica", sans-serif;
+    font-size: 22px;
+    line-height: 1.6em;
+    padding: 0.5em;
 }
 
 body {
-    background-color: purple;
+    background-color: $purpleBackground;
     color: white;
 }
 
@@ -42,17 +72,16 @@ nav {
 section {
     padding: 20px;
     height: 100vh;
-
 }
 
 .content-container{
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 50vw;//800px;
+    //margin: 0 auto;
     border: 1px solid yellow;
 }
 
 #projects {
-    background: orange;
+    background: $pink-lite;
     ul {
         list-style: none;
         max-width: 800px;
@@ -62,13 +91,13 @@ section {
         grid-gap: 20px;
     }
     li {
-        background: teal;
+        background: $pink-dark;
 
     }
 }
 
 #tools {
-    background: blue;
+    background: $blue;
     h4 {
         text-align: center;
     }
@@ -110,11 +139,11 @@ section {
 }
 
 #about {
-    background: green;
+    background: $teal;
 }
 
 #contact {
-    background: pink;
+    background: $orange;
 }
 
 @keyframes shake {
@@ -129,4 +158,18 @@ section {
   80% { transform: translate(-1px, -1px) rotate(0deg); }
   90% { transform: translate(1px, 1px) rotate(0deg); }
   100% { transform: translate(1px, -1px) rotate(0deg); }
+}
+
+
+
+footer {
+    height: 20vh;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    p {
+
+        text-align: center;
+        font-size: 0.8em;
+    }
 }

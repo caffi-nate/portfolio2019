@@ -1,9 +1,30 @@
+// headers type 1
 @font-face {
-    font-family: "P5hatty";
-    src: url(../fonts/p5hatty.ttf);
+    font-family: "PoetsenOne";
+    src: url(../fonts/PoetsenOne-Regular.ttf);
+}
+
+// headers type 2 alternative
+@font-face {
+    font-family: "RalphieBrown";
+    src: url(../fonts/valentine.ttf);
+}
+
+// test: header 2 as a gamey font
+// .... nah
+@font-face {
+    font-family: "PixelFont";
+    src: url(../fonts/yoshi.ttf);
 }
 
 @font-face {
-    font-family: "earwig-factory";
-    src: url(../fonts/earwig-factory.ttf);
+    font-family: "Brushy";
+    //ArtBrush: close but no cigar
+    src: url(../fonts/bernadette_rough.ttf);
+}
+
+// main body typeface
+@font-face {
+    font-family: "Coolvetica";
+    src: url(../fonts/coolveticaRG.ttf);
 }
