@@ -74,6 +74,15 @@ p {
   padding: 0.5em;
 }
 
+a {
+  text-decoration: none;
+  color: yellow;
+}
+
+a:hover {
+  color: cyan;
+}
+
 body {
   background-color: #332272;
   color: white;
@@ -82,6 +91,13 @@ body {
 header {
   height: 100vh;
   display: grid;
+}
+
+header ul {
+  width: 800px;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
 }
 
 #title-container {
@@ -110,6 +126,7 @@ nav ul {
 section {
   padding: 20px;
   min-height: 100vh;
+  transition: all 0.3s;
 }
 
 .content-container {
@@ -138,6 +155,11 @@ section {
   background: black;
 }
 
+#projects li:hover .project-background {
+  transform: scale(1.2);
+  -moz-transform: scale(1.2);
+}
+
 #projects li .project-background {
   background-size: cover;
   background-repeat: no-repeat;
@@ -147,11 +169,6 @@ section {
   background-image: url("/images/persona-project.png");
   transition: all 0.5s ease;
   z-index: 0;
-}
-
-#projects li .project-background:hover {
-  transform: scale(1.2);
-  -moz-transform: scale(1.2);
 }
 
 #projects h4 {

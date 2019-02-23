@@ -56,6 +56,14 @@ p {
     padding: 0.5em;
 }
 
+a {
+    text-decoration: none;
+    color: yellow;
+    &:hover{
+        color: cyan;
+    }
+}
+
 body {
     background-color: $purpleBackground;
     color: white;
@@ -64,6 +72,14 @@ body {
 header {
     height: 100vh;
     display: grid;
+    //grid-template-rows: 100px 100px;
+    ul {
+        width: 800px;
+        //margin: 0 auto;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+    }
 
 }
 
@@ -97,8 +113,18 @@ nav {
 section {
     padding: 20px;
     min-height: 100vh;
+    transition: all 0.3s;
+    //filter: grayscale(100%);
+    // > * {
+    //     filter: blur(4px);
+    // }
+    &:hover{
+        //filter:grayscale(0%);
+        // > * {
+        //     filter: blur(0);
+        // }
+    }
 }
-
 .content-container{
     max-width: 50vw;//800px;
     //margin: 0 auto;
@@ -109,6 +135,8 @@ section {
     width: 100%;
     padding: 20px 0;
     background: $pink-lite;
+
+
     ul {
         list-style: none;
         padding: 0;
@@ -123,6 +151,12 @@ section {
         //justify-content: flex-end;
         //display: grid;
         //grid-template-rows: 100% 50% 0 0;
+        &:hover{
+
+            .project-background{
+                @include scale(1.2);
+            }
+        }
 
         margin: 20px 0;
         height: 30vh;//20vh;//calc(20vh - 40px);
@@ -143,15 +177,15 @@ section {
             // &:nth-child(1){
             //
             // }
-            // &:nth-child(2){
+            // &:nth-of-type(2){
             //     background-image: url("/images/gamegrid-project.png");
             // }
-            // &:nth-child(3){
+            // &:nth-of-type(3){
             //     background-image: url("/images/engineface-project.png");
             // }
-            &:hover{
-                @include scale(1.2);
-            }
+            // &:hover{
+            //     @include scale(1.2);
+            // }
         }
 
 
