@@ -15,7 +15,7 @@
 h1 {
     font-size: 5em;
     font-family: "PoetsenOne", sans-serif;
-
+    line-height: 0.5em;
 
     //text-align: center;
 }
@@ -63,15 +63,40 @@ body {
 
 header {
     height: 100vh;
+    display: grid;
+
+}
+
+#title-container{
+    width: 50vw;
+    min-width: 640px;
+    height: 150px;
+    align-self: center;
+    //background-color: orange;
+
+    text-align: center;
 }
 
 nav {
+    //align-self: center;
+    align-self: flex-end;
     background: cyan;
+    height: 50px;
+    width: 800px;
+    margin: 0 auto;
+    ul {
+        list-style: none;
+        display: flex;
+        //flex:
+        flex-direction: horizontal;
+        justify-content: space-around;
+    }
+
 }
 
 section {
     padding: 20px;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .content-container{
@@ -81,18 +106,72 @@ section {
 }
 
 #projects {
+    width: 100%;
+    padding: 20px 0;
     background: $pink-lite;
     ul {
         list-style: none;
-        max-width: 800px;
+        padding: 0;
+        max-width: 1080px;
         margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-gap: 20px;
     }
     li {
-        background: $pink-dark;
+        //border: 1px solid yellow;
+        //display: flex;
+        //flex-direction: column;
+        //flex-wrap: wrap;
+        //justify-content: flex-end;
+        //display: grid;
+        //grid-template-rows: 100% 50% 0 0;
 
+        margin: 20px 0;
+        height: 30vh;//20vh;//calc(20vh - 40px);
+        width: 100%;
+        overflow: hidden;
+        background: black;
+
+        .project-background{
+            //background-position: 50% 50%;//center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            background-position: 50% 50%;
+            background-image: url("/images/persona-project.png");
+            transition: all 0.5s ease;
+            z-index: 0;
+            // &:nth-child(1){
+            //
+            // }
+            // &:nth-child(2){
+            //     background-image: url("/images/gamegrid-project.png");
+            // }
+            // &:nth-child(3){
+            //     background-image: url("/images/engineface-project.png");
+            // }
+            &:hover{
+                @include scale(1.2);
+            }
+        }
+
+
+    }
+    h4{
+        position: relative;
+        margin-top: -100px;
+        padding: 0;
+    }
+    p {
+        position: relative;
+        padding: 0;
+        font-size: 1.2em;
+
+    }
+    .project-description {
+        //color: red;
+        @media (max-width: 640px) {
+            display: none; // hide on small screens
+        }
     }
 }
 
