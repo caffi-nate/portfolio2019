@@ -101,6 +101,10 @@ a {
 body {
     background-color: $purpleBackground;
     color: white;
+    @supports (scroll-snap-type: mandatory){
+        scroll-snap-type: mandatory; // snaps directly to the right section always
+        //scroll-snap-type: proximity; // allows slight scrolling between sections
+    }
 }
 
 header {
@@ -130,39 +134,17 @@ header {
     text-align: center;
 }
 
-body {
-    @supports (scroll-snap-type: mandatory){
-        //scroll-snap-type: mandatory; // snaps directly to the right section always
-        scroll-snap-type: proximity; // allows slight scrolling between sections
-    }
-}
-
 .section-container {
     // we need to apply perspective to the parent container or it won't work in all browsers (chrome lets us do the wrong method though)
     perspective: 1000px;
     overflow-x: hidden;
     scroll-snap-coordinate: 0 0;
-    height: 100vh;
+    //height: 100vh;
     overflow-y: hidden;
 }
 
-section {
-    padding: 20px;
-    min-height: 100vh;
-    height: 100vh;
-    transition: all 0.3s;
-    //filter: grayscale(100%);
-    // > * {
-    //     filter: blur(4px);
-    // }
-    &:hover{
-        //filter:grayscale(0%);
-        // > * {
-        //     filter: blur(0);
-        // }
-    }
-}
-.content-container{
+
+.content-container{ // just for about
     max-width: 50vw;//800px;
     //margin: 0 auto;
     border: 1px solid yellow;
@@ -185,13 +167,28 @@ nav {
 
 }
 
-
+section {
+    padding: 20px;
+    min-height: 100vh;
+    height: 100vh;
+    //transition: all 0.3s;
+    //filter: grayscale(100%);
+    // > * {
+    //     filter: blur(4px);
+    // }
+    &:hover{
+        //filter:grayscale(0%);
+        // > * {
+        //     filter: blur(0);
+        // }
+    }
+}
 
 #projects {
     width: 100%;
     padding: 20px 0;
     background: $section3;//$pink-lite;
-    height: 100vh;
+    //height: 100vh;
 
     ul {
         list-style: none;
@@ -267,7 +264,7 @@ nav {
 
 #tools {
     background: $section1; //purple //$blue;
-    height: 100vh;
+    //height: 100vh;
     h4 {
         text-align: center;
     }
@@ -310,12 +307,24 @@ nav {
 
 #about {
     background: $section2;// $teal;
-    height: 100vh;
+    //height: 100vh;
 }
 
 #contact {
     background: $orange;
-    height: 100vh;
+    //height: 100vh;
+}
+
+footer {
+    height: 20vh;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    p {
+
+        text-align: center;
+        font-size: 0.8em;
+    }
 }
 
 @keyframes shake {
@@ -330,18 +339,4 @@ nav {
   80% { transform: translate(-1px, -1px) rotate(0deg); }
   90% { transform: translate(1px, 1px) rotate(0deg); }
   100% { transform: translate(1px, -1px) rotate(0deg); }
-}
-
-
-
-footer {
-    height: 20vh;
-    display: grid;
-    align-content: center;
-    justify-content: center;
-    p {
-
-        text-align: center;
-        font-size: 0.8em;
-    }
 }

@@ -124,6 +124,12 @@ body {
   color: white;
 }
 
+@supports (scroll-snap-type: mandatory) {
+  body {
+    scroll-snap-type: mandatory;
+  }
+}
+
 header {
   position: fixed;
   z-index: 1000;
@@ -146,25 +152,11 @@ header ul {
   text-align: center;
 }
 
-@supports (scroll-snap-type: mandatory) {
-  body {
-    scroll-snap-type: proximity;
-  }
-}
-
 .section-container {
   perspective: 1000px;
   overflow-x: hidden;
   scroll-snap-coordinate: 0 0;
-  height: 100vh;
   overflow-y: hidden;
-}
-
-section {
-  padding: 20px;
-  min-height: 100vh;
-  height: 100vh;
-  transition: all 0.3s;
 }
 
 .content-container {
@@ -186,11 +178,16 @@ nav ul {
   justify-content: space-around;
 }
 
+section {
+  padding: 20px;
+  min-height: 100vh;
+  height: 100vh;
+}
+
 #projects {
   width: 100%;
   padding: 20px 0;
   background: #e86e90;
-  height: 100vh;
 }
 
 #projects ul {
@@ -244,7 +241,6 @@ nav ul {
 
 #tools {
   background: #7d6bcd;
-  height: 100vh;
 }
 
 #tools h4 {
@@ -291,12 +287,22 @@ nav ul {
 
 #about {
   background: #6bcdb1;
-  height: 100vh;
 }
 
 #contact {
   background: #fdaf4b;
-  height: 100vh;
+}
+
+footer {
+  height: 20vh;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+footer p {
+  text-align: center;
+  font-size: 0.8em;
 }
 
 @keyframes shake {
@@ -333,16 +339,4 @@ nav ul {
   100% {
     transform: translate(1px, -1px) rotate(0deg);
   }
-}
-
-footer {
-  height: 20vh;
-  display: grid;
-  align-content: center;
-  justify-content: center;
-}
-
-footer p {
-  text-align: center;
-  font-size: 0.8em;
 }
