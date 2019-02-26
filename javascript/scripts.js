@@ -9,7 +9,7 @@ function calculateSectionProximity(e){
     //e.preventDefault(); // prevent scrolling behavior
 	const sections = document.querySelectorAll('.section-container');
 	const screen_height = window.innerHeight;
-    console.log(screen_height);
+    //console.log(screen_height);
 	const window_midpoint = window.pageYOffset + screen_height * 0.5;
 	const window_top = window.pageYOffset;
 	let bodyRect = document.body.getBoundingClientRect();
@@ -26,8 +26,8 @@ function calculateSectionProximity(e){
 		//distance = Math.abs(window_top - section_top) / screen_height;
         //distance = (window_top - section_top) / screen_height;
         distance = (window_top - section_top) / section_height;
-        console.log(screen_height);
-        console.log(section_height);
+        //console.log(screen_height);
+        //console.log(section_height);
 		// long way of clamping I guess
 		// let distance_adjusted = distance * 0.5;
 		// if (distance_adjusted > 100) distance_adjusted = 100;
@@ -51,4 +51,14 @@ function calculateSectionProximity(e){
 
 window.addEventListener('scroll', calculateSectionProximity);
 loadProjectBackgrounds();
-window.addEventListener('mousemove', galleryParallax);
+//window.addEventListener('mousemove', galleryParallax);
+
+function submitClick(e){
+	const submitButton = document.querySelector('input[type=submit]');
+	if (submitButton){
+		console.log(submitButton);
+		e.preventDefault(); // don't reload the page on click, we'll do something else instead
+	}
+}
+
+window.addEventListener('click', submitClick);

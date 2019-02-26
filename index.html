@@ -6,6 +6,7 @@
 		<link rel = "stylesheet" href = "css/style.css">
 	</head>
 	<body>
+		<!-- remove for now
 		<header>
 			<nav>
 				<ul>
@@ -15,7 +16,7 @@
 					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
-		</header>
+		</header> -->
 		<main>
 			<!--<div class = "container">-->
 				<div class = "section-container">
@@ -118,7 +119,18 @@
 					<section id = "contact">
 						<h3>contact</h3>
 						<h2>Get in touch!</h2>
-						<p>// Custom Email Form Here //</p>
+						<p>// Custom php email form here //</p>
+						<form id = "myForm">
+								<label>name:</label>
+								<input type = "text" name = "name" value = "">
+								<label>email address:</label>
+								<input type = "text" name = "email" value = "">
+								<label>subject:</label>
+								<input type = "text" name = "subject" value = "">
+								<label>content:</label>
+								<input type = "text" name = "content" value = "">
+								<input type ="submit" name ="submit" value ="submit" class = "submit-btn">
+						</form>
 						<footer>
 							<p>&copy 2019 Nathan Scott</p>
 							<p>nathan@caffinate.com</p>

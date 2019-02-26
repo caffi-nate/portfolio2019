@@ -87,6 +87,7 @@ h2 {
   font-size: 3em;
   font-family: "RalphieBrown", sans-serif;
   font-family: "Brushy", sans-serif;
+  text-align: center;
 }
 
 h3 {
@@ -126,6 +127,7 @@ body {
 
 @supports (scroll-snap-type: mandatory) {
   body {
+    scroll-snap-type: proximity;
     scroll-snap-type: mandatory;
   }
 }
@@ -185,24 +187,32 @@ section {
 }
 
 #projects {
-  width: 100%;
   padding: 20px 0;
   background: #e86e90;
+  overflow: hidden;
 }
 
 #projects ul {
   list-style: none;
   padding: 0;
-  max-width: 1080px;
   margin: 0 auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 #projects li {
+  transform-origin: center;
   margin: 20px 0;
-  height: 30vh;
-  width: 100%;
+  height: 75vh;
+  width: 1fr;
+  transition: width 0.5s;
   overflow: hidden;
   background: black;
+}
+
+#projects li:hover {
+  width: 1000px;
 }
 
 #projects li:hover .project-background {
@@ -339,4 +349,27 @@ footer p {
   100% {
     transform: translate(1px, -1px) rotate(0deg);
   }
+}
+
+form {
+  display: block;
+  background: blue;
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+form input {
+  display: block;
+  margin: 0 0 20px;
+  width: calc(100% - 40px);
+}
+
+form input[name=content] {
+  height: 200px;
+}
+
+form input[type=submit] {
+  width: 200px;
+  margin: 0 auto;
 }

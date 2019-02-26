@@ -59,6 +59,7 @@ h2 {
     font-family: "Brushy", sans-serif;
     //font-family: "PixelFont", sans-serif;
     //text-align: center;
+    text-align: center;
 }
 h3 {
 
@@ -102,8 +103,8 @@ body {
     background-color: $purpleBackground;
     color: white;
     @supports (scroll-snap-type: mandatory){
+        scroll-snap-type: proximity; // allows slight scrolling between sections
         scroll-snap-type: mandatory; // snaps directly to the right section always
-        //scroll-snap-type: proximity; // allows slight scrolling between sections
     }
 }
 
@@ -185,38 +186,43 @@ section {
 }
 
 #projects {
-    width: 100%;
+    //min-width: 100%;
     padding: 20px 0;
     background: $section3;//$pink-lite;
+    overflow: hidden;
     //height: 100vh;
 
     ul {
         list-style: none;
         padding: 0;
-        max-width: 1080px;
+        //max-width: 1080px;
         margin: 0 auto;
+        //margin-left: -50vw;
+        //display: grid;
+        //display: flex;
+        display:grid;
+        //width: 200vw;
+        justify-content: center;
+        grid-template-columns: repeat(3, 1fr);
     }
     li {
-        //border: 1px solid yellow;
-        //display: flex;
-        //flex-direction: column;
-        //flex-wrap: wrap;
-        //justify-content: flex-end;
-        //display: grid;
-        //grid-template-rows: 100% 50% 0 0;
+        transform-origin: center;
+        margin: 20px 0;
+        //height: 30vh;//20vh;//calc(20vh - 40px);
+        height: 75vh;
+        //width: 100%;
+        //width: 1000px;
+        width: 1fr;
+        transition: width 0.5s;
+        overflow: hidden;
+        background: black;
         &:hover{
-
+            //width: 1000px;
+            width: 1000px;
             .project-background{
                 @include scale(1.2);
             }
         }
-
-        margin: 20px 0;
-        height: 30vh;//20vh;//calc(20vh - 40px);
-        width: 100%;
-        overflow: hidden;
-        background: black;
-
         .project-background{
             //background-position: 50% 50%;//center;
             background-size: cover;
@@ -339,4 +345,33 @@ footer {
   80% { transform: translate(-1px, -1px) rotate(0deg); }
   90% { transform: translate(1px, 1px) rotate(0deg); }
   100% { transform: translate(1px, -1px) rotate(0deg); }
+}
+
+
+form{
+    display: block;
+    background: blue;
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+
+    input{
+        display: block;
+        //margin: 0 20px 20px 20px;
+        margin: 0 0 20px;
+        width: calc(100% - 40px);
+    }
+
+    input[name=content]{
+        height: 200px;
+    }
+
+    label {
+        //margin: 20px;
+    }
+
+    input[type=submit]{
+        width: 200px;
+        margin: 0 auto;
+    }
 }
