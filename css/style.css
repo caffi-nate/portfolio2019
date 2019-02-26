@@ -192,35 +192,30 @@ section {
   overflow: hidden;
 }
 
-#projects ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(3, 1fr);
+#projects #projects-container {
+  display: flex;
+  width: 100%;
+  transition: 0.5s transform;
 }
 
-#projects li {
+#projects .project {
+  flex: 1;
+  transition: all 0.5s;
+  transition-delay: 0.2s;
+  transform-origin: top left;
+  float: left;
   transform-origin: center;
-  margin: 20px 0;
+  margin: 20px;
   height: 75vh;
-  width: 1fr;
-  transition: width 0.5s;
   overflow: hidden;
   background: black;
 }
 
-#projects li:hover {
-  width: 1000px;
+#projects .project:hover {
+  flex: 5;
 }
 
-#projects li:hover .project-background {
-  transform: scale(1.2);
-  -moz-transform: scale(1.2);
-}
-
-#projects li .project-background {
+#projects .project .project-background {
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -229,6 +224,11 @@ section {
   background-image: url("/images/persona-project.png");
   transition: all 0.5s ease;
   z-index: 0;
+}
+
+#projects .project.open {
+  width: 75%;
+  transition: width 2s;
 }
 
 #projects h4 {
