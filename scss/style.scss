@@ -12,6 +12,40 @@
     font-size: 16px;
 }
 
+.buttonDemo{
+    background-color: green;
+    //border: 1px solid red;
+    display: inline-block;
+    margin: 0 0 0 20px;
+    padding: 0 10px;
+    &:hover{
+        background: red;
+        color: yellow;
+    }
+}
+
+.buttonSource{
+    margin: 0 0 0 20px;
+    padding: 0 10px;
+    display: inline-block;
+    background-color: gray;
+    color: white;
+    &:hover{
+        background: teal;
+    }
+}
+
+.fakeButton{
+    margin: 0 0 0 20px;
+    padding: 0 10px;
+    display: inline-block;
+    color: gray;
+    background: white;
+    &:hover{
+        color: gray;
+    }
+}
+
 h1 {
     font-size: 5em;
     font-family: "PoetsenOne", sans-serif;
@@ -70,7 +104,9 @@ body {
 }
 
 header {
-    height: 100vh;
+    //height: 100vh;
+    position: fixed;
+    z-index: 1000;
     display: grid;
     //grid-template-rows: 100px 100px;
     ul {
@@ -84,35 +120,36 @@ header {
 }
 
 #title-container{
-    width: 50vw;
+    width: 100vw;
     min-width: 640px;
-    height: 150px;
+    //height: 150px;
+    height: 100vh;
     align-self: center;
-    //background-color: orange;
+    background-color: orange;
 
     text-align: center;
 }
 
-nav {
-    //align-self: center;
-    align-self: flex-end;
-    background: cyan;
-    height: 50px;
-    width: 800px;
-    margin: 0 auto;
-    ul {
-        list-style: none;
-        display: flex;
-        //flex:
-        flex-direction: horizontal;
-        justify-content: space-around;
+body {
+    @supports (scroll-snap-type: mandatory){
+        //scroll-snap-type: mandatory; // snaps directly to the right section always
+        scroll-snap-type: proximity; // allows slight scrolling between sections
     }
+}
 
+.section-container {
+    // we need to apply perspective to the parent container or it won't work in all browsers (chrome lets us do the wrong method though)
+    perspective: 1000px;
+    overflow-x: hidden;
+    scroll-snap-coordinate: 0 0;
+    height: 100vh;
+    overflow-y: hidden;
 }
 
 section {
     padding: 20px;
     min-height: 100vh;
+    height: 100vh;
     transition: all 0.3s;
     //filter: grayscale(100%);
     // > * {
@@ -131,11 +168,30 @@ section {
     border: 1px solid yellow;
 }
 
+nav {
+    //align-self: center;
+    //align-self: flex-end;
+    background: cyan;
+    height: 50px;
+    width: 800px;
+    margin: 0 auto;
+    ul {
+        list-style: none;
+        display: flex;
+        //flex:
+        flex-direction: horizontal;
+        justify-content: space-around;
+    }
+
+}
+
+
+
 #projects {
     width: 100%;
     padding: 20px 0;
-    background: $pink-lite;
-
+    background: $section3;//$pink-lite;
+    height: 100vh;
 
     ul {
         list-style: none;
@@ -210,7 +266,8 @@ section {
 }
 
 #tools {
-    background: $blue;
+    background: $section1; //purple //$blue;
+    height: 100vh;
     h4 {
         text-align: center;
     }
@@ -252,11 +309,13 @@ section {
 }
 
 #about {
-    background: $teal;
+    background: $section2;// $teal;
+    height: 100vh;
 }
 
 #contact {
     background: $orange;
+    height: 100vh;
 }
 
 @keyframes shake {

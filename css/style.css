@@ -41,6 +41,42 @@
   font-size: 16px;
 }
 
+.buttonDemo {
+  background-color: green;
+  display: inline-block;
+  margin: 0 0 0 20px;
+  padding: 0 10px;
+}
+
+.buttonDemo:hover {
+  background: red;
+  color: yellow;
+}
+
+.buttonSource {
+  margin: 0 0 0 20px;
+  padding: 0 10px;
+  display: inline-block;
+  background-color: gray;
+  color: white;
+}
+
+.buttonSource:hover {
+  background: teal;
+}
+
+.fakeButton {
+  margin: 0 0 0 20px;
+  padding: 0 10px;
+  display: inline-block;
+  color: gray;
+  background: white;
+}
+
+.fakeButton:hover {
+  color: gray;
+}
+
 h1 {
   font-size: 5em;
   font-family: "PoetsenOne", sans-serif;
@@ -89,7 +125,8 @@ body {
 }
 
 header {
-  height: 100vh;
+  position: fixed;
+  z-index: 1000;
   display: grid;
 }
 
@@ -101,15 +138,41 @@ header ul {
 }
 
 #title-container {
-  width: 50vw;
+  width: 100vw;
   min-width: 640px;
-  height: 150px;
+  height: 100vh;
   align-self: center;
+  background-color: orange;
   text-align: center;
 }
 
+@supports (scroll-snap-type: mandatory) {
+  body {
+    scroll-snap-type: proximity;
+  }
+}
+
+.section-container {
+  perspective: 1000px;
+  overflow-x: hidden;
+  scroll-snap-coordinate: 0 0;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+section {
+  padding: 20px;
+  min-height: 100vh;
+  height: 100vh;
+  transition: all 0.3s;
+}
+
+.content-container {
+  max-width: 50vw;
+  border: 1px solid yellow;
+}
+
 nav {
-  align-self: flex-end;
   background: cyan;
   height: 50px;
   width: 800px;
@@ -123,21 +186,11 @@ nav ul {
   justify-content: space-around;
 }
 
-section {
-  padding: 20px;
-  min-height: 100vh;
-  transition: all 0.3s;
-}
-
-.content-container {
-  max-width: 50vw;
-  border: 1px solid yellow;
-}
-
 #projects {
   width: 100%;
   padding: 20px 0;
-  background: #efb2ba;
+  background: #e86e90;
+  height: 100vh;
 }
 
 #projects ul {
@@ -190,7 +243,8 @@ section {
 }
 
 #tools {
-  background: #85b2d9;
+  background: #7d6bcd;
+  height: 100vh;
 }
 
 #tools h4 {
@@ -236,11 +290,13 @@ section {
 }
 
 #about {
-  background: #6bd8b8;
+  background: #6bcdb1;
+  height: 100vh;
 }
 
 #contact {
   background: #fdaf4b;
+  height: 100vh;
 }
 
 @keyframes shake {
