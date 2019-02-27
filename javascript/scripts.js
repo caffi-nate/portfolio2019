@@ -1,6 +1,6 @@
 function loadProjectBackgrounds(){
     //const galleryItems = document.querySelectorAll('#projects > ul > li > .project-background');
-	const galleryItems = document.querySelectorAll('.project > .project-background');
+	const galleryItems = document.querySelectorAll('.project > a > .project-background');
     for (i = 0; i < galleryItems.length; i++){
         galleryItems[i].style.backgroundImage = (`url("/images/web-project-${i}.png")`);
     }

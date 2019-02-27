@@ -41,42 +41,6 @@
   font-size: 16px;
 }
 
-.buttonDemo {
-  background-color: green;
-  display: inline-block;
-  margin: 0 0 0 20px;
-  padding: 0 10px;
-}
-
-.buttonDemo:hover {
-  background: red;
-  color: yellow;
-}
-
-.buttonSource {
-  margin: 0 0 0 20px;
-  padding: 0 10px;
-  display: inline-block;
-  background-color: gray;
-  color: white;
-}
-
-.buttonSource:hover {
-  background: teal;
-}
-
-.fakeButton {
-  margin: 0 0 0 20px;
-  padding: 0 10px;
-  display: inline-block;
-  color: gray;
-  background: white;
-}
-
-.fakeButton:hover {
-  color: gray;
-}
-
 h1 {
   font-size: 5em;
   font-family: "PoetsenOne", sans-serif;
@@ -194,25 +158,45 @@ section {
 
 #projects #projects-container {
   display: flex;
-  width: 100%;
-  transition: 0.5s transform;
+  padding: 0px 5px;
+  width: calc(100% - 5px);
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+#projects .project-info-container {
+  margin-top: -110px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+  transition-delay: 0.4s;
+  opacity: 0;
 }
 
 #projects .project {
+  border-radius: 10px;
+  border: 1px solid black;
   flex: 1;
   transition: all 0.5s;
   transition-delay: 0.2s;
-  transform-origin: top left;
-  float: left;
   transform-origin: center;
-  margin: 20px;
-  height: 75vh;
+  margin-right: 5px;
+  height: 70vh;
   overflow: hidden;
   background: black;
 }
 
+#projects .project a {
+  color: white;
+}
+
 #projects .project:hover {
-  flex: 5;
+  flex: 8;
+}
+
+#projects .project:hover .project-info-container {
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 #projects .project .project-background {
@@ -226,27 +210,83 @@ section {
   z-index: 0;
 }
 
-#projects .project.open {
-  width: 75%;
-  transition: width 2s;
-}
-
 #projects h4 {
   position: relative;
-  margin-top: -100px;
   padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 #projects p {
   position: relative;
   padding: 0;
   font-size: 1.2em;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#projects .project-description {
+  overflow: hidden;
 }
 
 @media (max-width: 640px) {
   #projects .project-description {
     display: none;
   }
+}
+
+.project-button {
+  transition: all 0.3s;
+  border-radius: 2px;
+  background-color: blue;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.project-button:hover {
+  background: red;
+  color: yellow;
+}
+
+.buttonDemo {
+  transition: all 0.3s;
+  border-radius: 2px;
+  background-color: green;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.buttonDemo:hover {
+  background: red;
+  color: yellow;
+}
+
+.buttonSource {
+  border-radius: 2px;
+  padding: 0 10px;
+  display: inline-block;
+  background-color: gray;
+  color: white;
+}
+
+.buttonSource:hover {
+  background: teal;
+}
+
+.fakeButton {
+  border-radius: 2px;
+  padding: 0 10px;
+  display: inline-block;
+  color: gray;
+  background: white;
+}
+
+.fakeButton a {
+  color: gray;
+}
+
+.fakeButton:hover {
+  color: gray;
 }
 
 #tools {
@@ -304,7 +344,8 @@ section {
 }
 
 footer {
-  height: 20vh;
+  max-width: 1600px;
+  margin: 0 auto;
   display: grid;
   align-content: center;
   justify-content: center;

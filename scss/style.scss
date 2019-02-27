@@ -12,39 +12,7 @@
     font-size: 16px;
 }
 
-.buttonDemo{
-    background-color: green;
-    //border: 1px solid red;
-    display: inline-block;
-    margin: 0 0 0 20px;
-    padding: 0 10px;
-    &:hover{
-        background: red;
-        color: yellow;
-    }
-}
 
-.buttonSource{
-    margin: 0 0 0 20px;
-    padding: 0 10px;
-    display: inline-block;
-    background-color: gray;
-    color: white;
-    &:hover{
-        background: teal;
-    }
-}
-
-.fakeButton{
-    margin: 0 0 0 20px;
-    padding: 0 10px;
-    display: inline-block;
-    color: gray;
-    background: white;
-    &:hover{
-        color: gray;
-    }
-}
 
 h1 {
     font-size: 5em;
@@ -172,86 +140,66 @@ section {
     padding: 20px;
     min-height: 100vh;
     height: 100vh;
-    //transition: all 0.3s;
-    //filter: grayscale(100%);
-    // > * {
-    //     filter: blur(4px);
-    // }
+
     &:hover{
-        //filter:grayscale(0%);
-        // > * {
-        //     filter: blur(0);
-        // }
     }
 }
 
 #projects {
-    //min-width: 100%;
     padding: 20px 0;
     background: $section3;//$pink-lite;
     overflow: hidden;
-    //height: 100vh;
-
-    //width: 200vw;
-
-    //
-    // ul {
-    //     list-style: none;
-    //     padding: 0;
-    //     //max-width: 1080px;
-    //     margin: 0 auto;
-    //     //margin-left: -50vw;
-    //     //display: grid;
-    //     //display: flex;
-    //
-    // }
 
     #projects-container{
-        //display: grid;
-        //justify-content: center;
-        //grid-template-columns: repeat(3, 1fr);
         display: flex;
-        //flex: 1 0 auto;
-        //justify-content: center;
-        //align-items: center;
-        width: 100%;
-        //margin: 0;
-        transition: 0.5s transform; //cubic-bezier(0.86,0.12, 0.9,0.89)
-        &:hover{
-            //transform: translate3d(-40px, 0, 0);
-        }
+        //transition: 0.5s transform;
+        padding: 0px 5px;
+        width: calc(100% - 5px);
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+    .project-info-container{
+        margin-top: -110px;
+        padding: 10px; // hacky lol oh well
+        background-color: rgba(0,0,0,0.5);
+        transition: all 0.3s;
+        transition-delay: 0.4s; // little bit longer than flexbox transition
+        opacity: 0;
+        //transform: translateY(20px); // out of the container to begin with
     }
 
     .project{
+        border-radius: 10px;
+        border: 1px solid black;
         flex: 1;
-        //transition: 0.5s transform;
         transition: all 0.5s;
         transition-delay: 0.2s;
-        transform-origin: top left;
-        float: left;
-
         transform-origin: center;
-        margin: 20px;
-        //height: 30vh;//20vh;//calc(20vh - 40px);
-        height: 75vh;
+        margin-right: 5px;
+        height: 70vh;
         //width: 100%;
-        //width: 1000px;
         //width: 1fr;
         //transition: width 2s;
         overflow: hidden;
         background: black;
 
+        a {
+            color: white;
+        }
+
         &:hover{
-            //width: 1000px;
-            //width: 1000px;
             .project-background{
                 //@include scale(1.2);
             }
-            //transform: scale(1.2); // netflix code, less applicable here. we want a width only
-            flex: 5;
-            ~ .project {
-                //transform: translate3d(80px, 0, 0);
+            .project-info-container{
+                transform: translateY(0px);
+                opacity: 1;
             }
+            flex: 8;
+            //~ .project {
+                //transform: translate3d(80px, 0, 0);
+            //}
         }
         .project-background{
             //background-position: 50% 50%;//center;
@@ -278,29 +226,90 @@ section {
         }
     }
 
-    .project.open{
-        width: 75%;
-        transition: width 2s;
-    }
-
-
-
     h4{
         position: relative;
-        margin-top: -100px;
+        //margin-top: -100px;
         padding: 0;
+        overflow: hidden;
+        white-space: nowrap;
     }
     p {
         position: relative;
         padding: 0;
         font-size: 1.2em;
+        overflow: hidden;
+        white-space: nowrap;
 
     }
     .project-description {
         //color: red;
+        overflow: hidden;
         @media (max-width: 640px) {
             display: none; // hide on small screens
         }
+    }
+}
+
+.project-button{
+    transition: all 0.3s;
+    border-radius: 2px;
+    background-color: blue;
+    display: inline-block;
+    padding: 0 10px;
+
+    &:hover{
+        background: red;
+        color: yellow;
+    }
+
+}
+
+// .project-button.demo {
+//     color: red;
+//     background-color: teal;
+// }
+
+.buttonDemo{
+    transition: all 0.3s;
+    border-radius: 2px;
+    background-color: green;
+    //border: 1px solid red;
+    display: inline-block;
+    //margin: 0 0 0 20px;
+    padding: 0 10px;
+    &:hover{
+        background: red;
+        color: yellow;
+        //transform: translateY(-4px);
+
+    }
+}
+
+.buttonSource{
+    border-radius: 2px;
+    //margin: 0 0 0 20px;
+    padding: 0 10px;
+    display: inline-block;
+    background-color: gray;
+    color: white;
+
+    &:hover{
+        background: teal;
+    }
+}
+
+.fakeButton{
+    border-radius: 2px;
+    //margin: 0 0 0 20px;
+    padding: 0 10px;
+    display: inline-block;
+    color: gray;
+    a {
+        color: gray;
+    }
+    background: white;
+    &:hover{
+        color: gray;
     }
 }
 
@@ -358,7 +367,9 @@ section {
 }
 
 footer {
-    height: 20vh;
+    //height: 20vh;
+    max-width: 1600px;
+    margin: 0 auto;
     display: grid;
     align-content: center;
     justify-content: center;
