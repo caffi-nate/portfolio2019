@@ -12,12 +12,11 @@
     font-size: 16px;
 }
 
-
-
 h1 {
     font-size: 5em;
     font-family: "PoetsenOne", sans-serif;
-    line-height: 0.5em;
+    line-height: 1em; // was 0.5 for some reason?
+    text-align: center;
 
     //text-align: center;
 }
@@ -28,6 +27,7 @@ h2 {
     //font-family: "PixelFont", sans-serif;
     //text-align: center;
     text-align: center;
+    line-height: 1em;
 }
 h3 {
 
@@ -92,15 +92,58 @@ header {
 
 }
 
+section {
+    padding: 20px;
+    min-height: 100vh;
+    height: 100vh;
+
+    &:hover{
+    }
+}
+
 #title-container{
+    padding: 0;
     width: 100vw;
-    min-width: 640px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    //min-width: 640px;
     //height: 150px;
     height: 100vh;
-    align-self: center;
     background-color: orange;
 
-    text-align: center;
+
+
+
+    ul {
+        max-width: 480px;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        margin: 0 auto;
+        margin-top: 20px; // hacky: gap after titles
+
+        li {
+            transition: all 0.2s;
+            img {
+                width: 50%;
+                //height: 50%;
+                margin: 0 auto;
+
+                &:hover{
+                }
+            }
+            h6{
+                @media (max-width: 640px) {
+                    display: none; // hide on small screens
+                }
+            }
+            &:hover{
+                transform: translateY(-20px);
+                transform: rotate3d(0, 1, 0.5, 90deg);
+            }
+        }
+    }
 }
 
 .section-container {
@@ -108,15 +151,31 @@ header {
     perspective: 1000px;
     overflow-x: hidden;
     scroll-snap-coordinate: 0 0;
-    //height: 100vh;
+    //height: calc(100vh - 40px;
     overflow-y: hidden;
 }
 
 
-.content-container{ // just for about
-    max-width: 50vw;//800px;
+.content-container{ // just for title page
+    //display: grid;
+    //align-items: center;
+    //max-width: 50vw;//800px;
+
+    h1 {
+        text-align: center;
+    }
+
+    @media (max-width: 640px) {
+        //max-width: calc(100vw - 40px); // hide on small screens. accounts for section padding
+    }
     //margin: 0 auto;
     border: 1px solid yellow;
+    //height: calc(100vh - 40px); // padding
+    //height: 30vh;
+    //align-self: center;
+    //overflow: hidden;
+
+    //grid-gap: 20px;
 }
 
 nav {
@@ -136,13 +195,25 @@ nav {
 
 }
 
-section {
-    padding: 20px;
-    min-height: 100vh;
-    height: 100vh;
+#about {
+    background: $section2;// $teal;
+    //height: 100vh;
 
-    &:hover{
+    .about-container{
+
+        h3{
+            //color: red;
+            border: 1px solid red;
+        }
+        p {
+            border: 1px solid cyan;
+        }
+        max-width: 50vw;//800px;
+        display: grid;
+        align-content: center;
+        border: 1px solid yellow;
     }
+
 }
 
 #projects {
@@ -157,16 +228,6 @@ section {
         width: calc(100% - 5px);
         max-width: 1600px;
         margin: 0 auto;
-    }
-
-    .project-info-container{
-        margin-top: -110px;
-        padding: 10px; // hacky lol oh well
-        background-color: rgba(0,0,0,0.5);
-        transition: all 0.3s;
-        transition-delay: 0.4s; // little bit longer than flexbox transition
-        opacity: 0;
-        //transform: translateY(20px); // out of the container to begin with
     }
 
     .project{
@@ -226,6 +287,16 @@ section {
         }
     }
 
+    .project-info-container{
+        margin-top: -110px;
+        padding: 10px; // hacky: gets it to sit flush against container bottom
+        background-color: rgba(0,0,0,0.5);
+        transition: all 0.3s;
+        transition-delay: 0.45s; // little bit longer than flexbox transition
+        opacity: 0;
+        transform: translateY(30px); // out of the container to begin with
+    }
+
     h4{
         position: relative;
         //margin-top: -100px;
@@ -251,6 +322,9 @@ section {
 }
 
 .project-button{
+    //todo: make these sit at the bottom of the container no matter what
+
+
     transition: all 0.3s;
     border-radius: 2px;
     background-color: blue;
@@ -261,7 +335,6 @@ section {
         background: red;
         color: yellow;
     }
-
 }
 
 // .project-button.demo {
@@ -315,6 +388,7 @@ section {
 
 #tools {
     background: $section1; //purple //$blue;
+
     //height: 100vh;
     h4 {
         text-align: center;
@@ -330,6 +404,7 @@ section {
         justify-content: center;
     }
     li {
+
         background-color: teal;
         .tool-icons{
             display: flex;
@@ -356,14 +431,13 @@ section {
 
 }
 
-#about {
-    background: $section2;// $teal;
-    //height: 100vh;
-}
-
 #contact {
     background: $orange;
-    //height: 100vh;
+    background-image: url("/images/scrolling-background-test.png");
+    background-width: 200px;
+    //background-height: 100px;
+    //background-repeat: no-repeat;
+    //background-repeat: repeat;
 }
 
 footer {

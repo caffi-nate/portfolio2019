@@ -44,7 +44,8 @@
 h1 {
   font-size: 5em;
   font-family: "PoetsenOne", sans-serif;
-  line-height: 0.5em;
+  line-height: 1em;
+  text-align: center;
 }
 
 h2 {
@@ -52,6 +53,7 @@ h2 {
   font-family: "RalphieBrown", sans-serif;
   font-family: "Brushy", sans-serif;
   text-align: center;
+  line-height: 1em;
 }
 
 h3 {
@@ -109,13 +111,49 @@ header ul {
   justify-content: space-around;
 }
 
-#title-container {
-  width: 100vw;
-  min-width: 640px;
+section {
+  padding: 20px;
+  min-height: 100vh;
   height: 100vh;
-  align-self: center;
+}
+
+#title-container {
+  padding: 0;
+  width: 100vw;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   background-color: orange;
-  text-align: center;
+}
+
+#title-container ul {
+  max-width: 480px;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+#title-container ul li {
+  transition: all 0.2s;
+}
+
+#title-container ul li img {
+  width: 50%;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  #title-container ul li h6 {
+    display: none;
+  }
+}
+
+#title-container ul li:hover {
+  transform: translateY(-20px);
+  transform: rotate3d(0, 1, 0.5, 90deg);
 }
 
 .section-container {
@@ -126,8 +164,11 @@ header ul {
 }
 
 .content-container {
-  max-width: 50vw;
   border: 1px solid yellow;
+}
+
+.content-container h1 {
+  text-align: center;
 }
 
 nav {
@@ -144,10 +185,23 @@ nav ul {
   justify-content: space-around;
 }
 
-section {
-  padding: 20px;
-  min-height: 100vh;
-  height: 100vh;
+#about {
+  background: #6bcdb1;
+}
+
+#about .about-container {
+  max-width: 50vw;
+  display: grid;
+  align-content: center;
+  border: 1px solid yellow;
+}
+
+#about .about-container h3 {
+  border: 1px solid red;
+}
+
+#about .about-container p {
+  border: 1px solid cyan;
 }
 
 #projects {
@@ -162,15 +216,6 @@ section {
   width: calc(100% - 5px);
   max-width: 1600px;
   margin: 0 auto;
-}
-
-#projects .project-info-container {
-  margin-top: -110px;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: all 0.3s;
-  transition-delay: 0.4s;
-  opacity: 0;
 }
 
 #projects .project {
@@ -208,6 +253,16 @@ section {
   background-image: url("/images/persona-project.png");
   transition: all 0.5s ease;
   z-index: 0;
+}
+
+#projects .project-info-container {
+  margin-top: -110px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+  transition-delay: 0.45s;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 #projects h4 {
@@ -335,12 +390,10 @@ section {
   margin: 1em;
 }
 
-#about {
-  background: #6bcdb1;
-}
-
 #contact {
   background: #fdaf4b;
+  background-image: url("/images/scrolling-background-test.png");
+  background-width: 200px;
 }
 
 footer {
