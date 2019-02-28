@@ -63,22 +63,33 @@ function submitClick(e){
 }
 
 
-// scrolling background
+// scrolling background: contact page
 let bgTimer = 0;
+let rotationAngle = 0;
 let contactContainer = document.querySelector('#contact');
+let aboutContainer = document.querySelector("#about-bg");
 //let title = document.querySelector('#contact h3'); // debug coordinates with this if necessary
 setInterval(function scrollBackground(){
 	//bgTimer = (bgTimer + 0.025) % 100; // works for percents, not px
 	bgTimer = (bgTimer + 0.5) % 200; // later: replace 200 with the image's width
+	rotationAngle = (rotationAngle + 0.1) % 360;
 	contactContainer.style.backgroundPosition = `${bgTimer}px ${bgTimer}px`;
+
+	// rotating background: about page
+	aboutContainer.style.transform = `rotate(${rotationAngle}deg)`;
+
 	//title.innerHTML = Math.floor(bgTimer); // bug: jerky after we hit 100
 }, 10);
 
 
 
 
+
+
 const toolTip = document.querySelector('#skill-description');
+const toolP = toolTip.firstElementChild;
 const toolIcons = document.querySelectorAll('.tool-icon');
+
 function setToolTip(e){
 		// set the tool tip box content to the image's alt tag
 		if(e.target.classList.contains('tool-icon')){
@@ -88,11 +99,12 @@ function setToolTip(e){
 					toolText = e.target.alt;
 				}
 			}
-			toolTip.innerHTML = `<p>${toolText}</p>`;
+			toolP.innerHTML = toolText;
+			toolP.classList.add("tool-tip-show");
 		}
 }
 function resetToolTip(e){
-		toolTip.innerHTML = `<p></p>`;
+		toolP.classList.remove("tool-tip-show");
 }
 
 
