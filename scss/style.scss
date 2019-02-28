@@ -89,8 +89,9 @@ header {
         display: flex;
         justify-content: space-around;
     }
-
 }
+
+
 
 section {
     padding: 20px;
@@ -101,6 +102,16 @@ section {
     }
 }
 
+/* SVG graphics initial declaration */
+.dont-render{
+    position: absolute;
+    height: 0;
+    width: 0;
+    fill: red;
+}
+
+
+
 #title-container{
     padding: 0;
     width: 100vw;
@@ -109,10 +120,16 @@ section {
     justify-content: center;
     //min-width: 640px;
     //height: 150px;
-    height: 100vh;
+    //height: 100vh;
     background-color: orange;
+    //transition: all 0.3s;
 
+    .icon {
+        //fill: white;
+        width: 50px;
+        height: 50px;
 
+    }
 
 
     ul {
@@ -122,11 +139,14 @@ section {
         justify-content: space-around;
         margin: 0 auto;
         margin-top: 20px; // hacky: gap after titles
+        fill: white;
 
         li {
+            border: 1px solid red;
             transition: all 0.2s;
+
             img {
-                width: 50%;
+                //width: 50%;
                 //height: 50%;
                 margin: 0 auto;
 
@@ -140,7 +160,8 @@ section {
             }
             &:hover{
                 transform: translateY(-20px);
-                transform: rotate3d(0, 1, 0.5, 90deg);
+                fill: purple;
+                //transform: rotate3d(0, 1, 0.5, 90deg);
             }
         }
     }
@@ -168,14 +189,7 @@ section {
     @media (max-width: 640px) {
         //max-width: calc(100vw - 40px); // hide on small screens. accounts for section padding
     }
-    //margin: 0 auto;
     border: 1px solid yellow;
-    //height: calc(100vh - 40px); // padding
-    //height: 30vh;
-    //align-self: center;
-    //overflow: hidden;
-
-    //grid-gap: 20px;
 }
 
 nav {
@@ -323,8 +337,6 @@ nav {
 
 .project-button{
     //todo: make these sit at the bottom of the container no matter what
-
-
     transition: all 0.3s;
     border-radius: 2px;
     background-color: blue;
@@ -404,7 +416,8 @@ nav {
         justify-content: center;
     }
     li {
-
+        width: 35vw;
+        padding: 20px;
         background-color: teal;
         .tool-icons{
             display: flex;
@@ -421,15 +434,24 @@ nav {
             }
         }
     }
-    p {
+
+    #skill-description {
         //grid-row: 3;
-        height: 1.5em;
+        //text-align: center;
+        //margin: 0 auto;
+
+        border: 1px solid yellow;
+        height: 3em;
         width: 500px;
         background-color: orange;
-        margin: 1em;
+        //margin: 1em;
+        margin: 20px auto;
+        text-align: center;
     }
-
 }
+
+
+
 
 #contact {
     background: $orange;

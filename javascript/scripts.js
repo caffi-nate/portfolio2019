@@ -77,4 +77,25 @@ setInterval(function scrollBackground(){
 
 
 
+const toolTip = document.querySelector('#skill-description');
+const toolIcons = document.querySelectorAll('.tool-icon');
+function setToolTip(e){
+		// set the tool tip box content to the image's alt tag
+		if(e.target.classList.contains('tool-icon')){
+			let toolText = "";
+			for (i = 0; i < toolIcons.length; i++){
+				if (toolIcons[i] == e.target){
+					toolText = e.target.alt;
+				}
+			}
+			toolTip.innerHTML = `<p>${toolText}</p>`;
+		}
+}
+function resetToolTip(e){
+		toolTip.innerHTML = `<p></p>`;
+}
+
+
+window.addEventListener('mouseover', setToolTip);
+window.addEventListener('mouseout', resetToolTip)
 window.addEventListener('click', submitClick);

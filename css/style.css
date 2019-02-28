@@ -117,14 +117,26 @@ section {
   height: 100vh;
 }
 
+/* SVG graphics initial declaration */
+.dont-render {
+  position: absolute;
+  height: 0;
+  width: 0;
+  fill: red;
+}
+
 #title-container {
   padding: 0;
   width: 100vw;
   display: grid;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   background-color: orange;
+}
+
+#title-container .icon {
+  width: 50px;
+  height: 50px;
 }
 
 #title-container ul {
@@ -134,14 +146,15 @@ section {
   justify-content: space-around;
   margin: 0 auto;
   margin-top: 20px;
+  fill: white;
 }
 
 #title-container ul li {
+  border: 1px solid red;
   transition: all 0.2s;
 }
 
 #title-container ul li img {
-  width: 50%;
   margin: 0 auto;
 }
 
@@ -153,7 +166,7 @@ section {
 
 #title-container ul li:hover {
   transform: translateY(-20px);
-  transform: rotate3d(0, 1, 0.5, 90deg);
+  fill: purple;
 }
 
 .section-container {
@@ -364,6 +377,8 @@ nav ul {
 }
 
 #tools li {
+  width: 35vw;
+  padding: 20px;
   background-color: teal;
 }
 
@@ -383,11 +398,13 @@ nav ul {
   transition-duration: 0.1s;
 }
 
-#tools p {
-  height: 1.5em;
+#tools #skill-description {
+  border: 1px solid yellow;
+  height: 3em;
   width: 500px;
   background-color: orange;
-  margin: 1em;
+  margin: 20px auto;
+  text-align: center;
 }
 
 #contact {
