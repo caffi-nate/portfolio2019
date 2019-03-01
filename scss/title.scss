@@ -1,0 +1,96 @@
+#title-container{
+    padding: 0;
+    width: 100vw;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: $orange-samurai; //orange;
+    h1,h2 {
+        color: $white-samurai;
+    }
+    .icon {
+        //fill: $white-samurai;
+        width: 50px;
+        height: 50px;
+    }
+    ul {
+        max-width: 480px;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        margin: 0 auto;
+        margin-top: 20px; // hacky: gap after titles
+        fill: $white-samurai;
+
+        li {
+            //border: 1px solid red;
+            .nav-container{
+                //background: black;
+                transition: all 0.3s; // doesn't affect h6 so we have to apply again manually
+                img {
+                    margin: 0 auto;
+
+                }
+                h6{
+                    color: $white-samurai;//white;
+                    transition: all 0.3s;
+                    @media (max-width: 640px) {
+                        display: none; // hide on small screens
+                    }
+                }
+            }
+            &:hover{
+                div {
+                    transform: translateY(-20px);
+                }
+                fill: $black-samurai;//purple;
+                //transform: rotate3d(0, 1, 0.5, 90deg);
+                h6 {
+                    color: $black-samurai;//purple;
+                }
+            }
+        }
+    }
+}
+
+.section-container {
+    // we need to apply perspective to the parent container or it won't work in all browsers (chrome lets us do the wrong method though)
+    perspective: 1000px;
+    overflow: hidden;
+    scroll-snap-coordinate: 0 0;
+    //height: calc(100vh - 40px;
+    overflow-y: hidden;
+}
+
+
+.content-container{ // just for title page
+    //display: grid;
+    //align-items: center;
+    //max-width: 50vw;//800px;
+
+    h1 {
+        text-align: center;
+    }
+
+    @media (max-width: 640px) {
+        //max-width: calc(100vw - 40px); // hide on small screens. accounts for section padding
+    }
+    //border: 1px solid yellow;
+}
+
+nav {
+    //align-self: center;
+    //align-self: flex-end;
+    background: cyan;
+    height: 50px;
+    width: 800px;
+    margin: 0 auto;
+    ul {
+        list-style: none;
+        display: flex;
+        //flex:
+        flex-direction: horizontal;
+        justify-content: space-around;
+    }
+
+}

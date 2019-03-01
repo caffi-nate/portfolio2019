@@ -4,16 +4,6 @@
 }
 
 @font-face {
-  font-family: "RalphieBrown";
-  src: url(../fonts/valentine.ttf);
-}
-
-@font-face {
-  font-family: "PixelFont";
-  src: url(../fonts/yoshi.ttf);
-}
-
-@font-face {
   font-family: "Brushy";
   src: url(../fonts/bernadette_rough.ttf);
 }
@@ -50,7 +40,6 @@ h1 {
 
 h2 {
   font-size: 3em;
-  font-family: "RalphieBrown", sans-serif;
   font-family: "Brushy", sans-serif;
   text-align: center;
   line-height: 1em;
@@ -64,11 +53,16 @@ h3 {
 }
 
 h4 {
-  font-family: "RalphieBrown", sans-serif;
   font-size: 3em;
   font-family: "PoetsenOne", sans-serif;
   font-size: 1.5em;
   padding: 1em;
+}
+
+h5 {
+  font-size: 1.5em;
+  font-family: "PoetsenOne", sans-serif;
+  padding: 0.5em;
 }
 
 p {
@@ -131,7 +125,11 @@ section {
   display: grid;
   align-items: center;
   justify-content: center;
-  background-color: orange;
+  background-color: #ff7f1f;
+}
+
+#title-container h1, #title-container h2 {
+  color: #ffe9c4;
 }
 
 #title-container .icon {
@@ -146,27 +144,38 @@ section {
   justify-content: space-around;
   margin: 0 auto;
   margin-top: 20px;
-  fill: white;
+  fill: #ffe9c4;
 }
 
-#title-container ul li {
-  border: 1px solid red;
-  transition: all 0.2s;
+#title-container ul li .nav-container {
+  transition: all 0.3s;
 }
 
-#title-container ul li img {
+#title-container ul li .nav-container img {
   margin: 0 auto;
 }
 
+#title-container ul li .nav-container h6 {
+  color: #ffe9c4;
+  transition: all 0.3s;
+}
+
 @media (max-width: 640px) {
-  #title-container ul li h6 {
+  #title-container ul li .nav-container h6 {
     display: none;
   }
 }
 
 #title-container ul li:hover {
+  fill: #040305;
+}
+
+#title-container ul li:hover div {
   transform: translateY(-20px);
-  fill: purple;
+}
+
+#title-container ul li:hover h6 {
+  color: #040305;
 }
 
 .section-container {
@@ -174,10 +183,6 @@ section {
   overflow: hidden;
   scroll-snap-coordinate: 0 0;
   overflow-y: hidden;
-}
-
-.content-container {
-  border: 1px solid yellow;
 }
 
 .content-container h1 {
@@ -372,11 +377,16 @@ nav ul {
 }
 
 #tools {
-  background: #7d6bcd;
+  background: #54418b;
 }
 
-#tools h4 {
+#tools h3 {
+  color: #e9576a;
+}
+
+#tools h3, #tools h4 {
   text-align: center;
+  color: #ffe9c4;
 }
 
 #tools ul {
@@ -393,7 +403,7 @@ nav ul {
 #tools li {
   width: 35vw;
   padding: 20px;
-  background-color: teal;
+  background-color: #e9576a;
 }
 
 #tools li .tool-icons {
@@ -402,6 +412,7 @@ nav ul {
 }
 
 #tools li img {
+  border: 1px solid yellow;
   width: 4em;
   height: 4em;
 }
@@ -416,16 +427,16 @@ nav ul {
 #tools #skill-description {
   display: block;
   transition: all 1s;
-  border: 1px solid yellow;
   height: 3em;
   width: 500px;
-  background-color: orange;
+  background-color: #e9576a;
   margin: 20px auto;
   text-align: center;
 }
 
 #tools #skill-description p {
   transition: all 0.2s;
+  color: #ffe9c4;
   opacity: 0;
   transform: translateY(20px) scale(0.1) rotate3d(0, 1, 0, 270deg);
 }
@@ -453,42 +464,6 @@ footer {
 footer p {
   text-align: center;
   font-size: 0.8em;
-}
-
-@keyframes shake {
-  0% {
-    transform: translate(4px, 4px) rotate(2deg);
-  }
-  10% {
-    transform: translate(-3px, -3px) rotate(-2deg);
-  }
-  20% {
-    transform: translate(-3px, 1px) rotate(1deg);
-  }
-  30% {
-    transform: translate(3px, 3px) rotate(0deg);
-  }
-  40% {
-    transform: translate(2px, -2px) rotate(1deg);
-  }
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  60% {
-    transform: translate(-2px, 1px) rotate(0deg);
-  }
-  70% {
-    transform: translate(2px, 1px) rotate(0deg);
-  }
-  80% {
-    transform: translate(-1px, -1px) rotate(0deg);
-  }
-  90% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
-  100% {
-    transform: translate(1px, -1px) rotate(0deg);
-  }
 }
 
 form {

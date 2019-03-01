@@ -1,0 +1,167 @@
+#projects {
+    padding: 20px 0;
+    background: $section3;//$pink-lite;
+    overflow: hidden;
+
+    #projects-container{
+        display: flex;
+        //transition: 0.5s transform;
+        padding: 0px 5px;
+        width: calc(100% - 5px);
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+    .project{
+        border-radius: 10px;
+        border: 1px solid black;
+        flex: 1;
+        transition: all 0.5s;
+        transition-delay: 0.2s;
+        transform-origin: center;
+        margin-right: 5px;
+        height: 70vh;
+        //width: 100%;
+        //width: 1fr;
+        //transition: width 2s;
+        overflow: hidden;
+        background: black;
+
+        a {
+            color: white;
+        }
+
+        &:hover{
+            .project-background{
+                //@include scale(1.2);
+            }
+            .project-info-container{
+                transform: translateY(0px);
+                opacity: 1;
+            }
+            flex: 8;
+            //~ .project {
+                //transform: translate3d(80px, 0, 0);
+            //}
+        }
+        .project-background{
+            //background-position: 50% 50%;//center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            background-position: 50% 50%;
+            background-image: url("/images/persona-project.png");
+            transition: all 0.5s ease;
+            z-index: 0;
+            // &:nth-child(1){
+            //
+            // }
+            // &:nth-of-type(2){
+            //     background-image: url("/images/gamegrid-project.png");
+            // }
+            // &:nth-of-type(3){
+            //     background-image: url("/images/engineface-project.png");
+            // }
+            // &:hover{
+            //     @include scale(1.2);
+            // }
+        }
+    }
+
+    .project-info-container{
+        margin-top: -110px;
+        padding: 10px; // hacky: gets it to sit flush against container bottom
+        background-color: rgba(0,0,0,0.5);
+        transition: all 0.3s;
+        transition-delay: 0.45s; // little bit longer than flexbox transition
+        opacity: 0;
+        transform: translateY(30px); // out of the container to begin with
+    }
+
+    h4{
+        position: relative;
+        //margin-top: -100px;
+        padding: 0;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    p {
+        position: relative;
+        padding: 0;
+        font-size: 1.2em;
+        overflow: hidden;
+        white-space: nowrap;
+
+    }
+    .project-description {
+        //color: red;
+        overflow: hidden;
+        @media (max-width: 640px) {
+            display: none; // hide on small screens
+        }
+    }
+}
+
+.project-button{
+    //todo: make these sit at the bottom of the container no matter what
+    transition: all 0.3s;
+    border-radius: 2px;
+    background-color: blue;
+    display: inline-block;
+    padding: 0 10px;
+
+    &:hover{
+        background: red;
+        color: yellow;
+    }
+}
+
+// .project-button.demo {
+//     color: red;
+//     background-color: teal;
+// }
+
+.buttonDemo{
+    transition: all 0.3s;
+    border-radius: 2px;
+    background-color: green;
+    //border: 1px solid red;
+    display: inline-block;
+    //margin: 0 0 0 20px;
+    padding: 0 10px;
+    &:hover{
+        background: red;
+        color: yellow;
+        //transform: translateY(-4px);
+
+    }
+}
+
+.buttonSource{
+    border-radius: 2px;
+    //margin: 0 0 0 20px;
+    padding: 0 10px;
+    display: inline-block;
+    background-color: gray;
+    color: white;
+
+    &:hover{
+        background: teal;
+    }
+}
+
+.fakeButton{
+    border-radius: 2px;
+    //margin: 0 0 0 20px;
+    padding: 0 10px;
+    display: inline-block;
+    color: gray;
+    a {
+        color: gray;
+    }
+    background: white;
+    &:hover{
+        color: gray;
+    }
+}

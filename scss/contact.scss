@@ -1,0 +1,43 @@
+#contact {
+    background: $orange;
+    background-image: url("/images/scrolling-background-test.png");
+    background-width: 200px;
+}
+
+footer {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    p {
+        text-align: center;
+        font-size: 0.8em;
+    }
+}
+form{
+    display: block;
+    background: blue;
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+
+    input{
+        display: block;
+        margin: 0 0 20px;
+        width: calc(100% - 40px);
+    }
+
+    input[name=content]{
+        height: 200px;
+    }
+
+    label {
+        //margin: 20px;
+    }
+
+    input[type=submit]{
+        width: 200px;
+        margin: 0 auto;
+    }
+}
