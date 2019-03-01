@@ -393,45 +393,89 @@ nav ul {
   color: #ffe9c4;
 }
 
-#tools ul {
-  max-width: 800px;
-  margin: 0 auto;
-  list-style: none;
+#tools .tools-container {
+  border: 1px solid yellow;
   display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(2, 1fr);
-  align-content: center;
-  justify-content: center;
+  grid-template-columns: 0 0 0;
+  grid-template-columns: 0 0 0;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 0 0 0;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  border: 1px solid red;
+  height: 500px;
+  width: 588px;
+  transition: all 5s;
+  margin: 0 auto;
 }
 
-#tools li {
-  width: 35vw;
+#tools .tool-type {
+  border: 1px solid lime;
+  position: relative;
+  transition: all 0.5s;
   padding: 20px;
+  width: calc(588px - 40px);
+  height: 300px;
+  margin: 0 20px;
   background-color: #e9576a;
 }
 
-#tools li .tool-icons {
-  display: flex;
-  justify-content: space-around;
+#tools .tool-type:nth-of-type(1) {
+  grid-row: 1;
+  grid-column: 2;
+  background-color: red;
+  transform: translate3d(0px, -100px, -200px);
 }
 
-#tools li .icon-container {
+#tools .tool-type:nth-of-type(2) {
+  grid-row: 2;
+  grid-column: 3;
+  background-color: black;
+  transform: translate3d(-350px, 0px, -100px);
+}
+
+#tools .tool-type:nth-of-type(3) {
+  grid-row: 3;
+  grid-column: 2;
+  background-color: blue;
+  transform: translate3d(0, 100px, 10px);
+}
+
+#tools .tool-type:nth-of-type(4) {
+  grid-row: 2;
+  grid-column: 1;
+  background-color: teal;
+  transform: translate3d(350px, 0px, -100px);
+}
+
+#tools .tool-type .tool-icons {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+}
+
+#tools .tool-type .icon-container {
+  position: relative;
   padding: 10px;
+  margin: 10px auto;
   background: #ffe9c4;
   border-radius: 10px;
 }
 
-#tools li .icon-container img {
+#tools .tool-type .icon-container img {
+  position: relative;
   width: 4em;
   height: 4em;
   transition-duration: 0.6s;
 }
 
-#tools li .icon-container:hover img {
+#tools .tool-type .icon-container:hover img {
   transform: rotate3d(0, 1, 0, 360deg);
 }
 
 #tools #skill-description {
+  overflow: hidden;
   display: block;
   height: 5em;
   width: 500px;

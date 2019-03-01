@@ -1,6 +1,5 @@
 #tools {
     background: $purple-twitter;//$section1; //purple //$blue;
-
     //height: 100vh;
     h3 {
         color: $red-twitter;
@@ -9,31 +8,120 @@
         text-align: center;
         color: $white-samurai;
     }
-    ul {
-        max-width: 800px;
-        margin: 0 auto;
-        list-style: none;
+
+    //width: 1080px;
+    .tools-container {
+        //max-width: 800px;
+        //width: 100%;
+        border: 1px solid yellow;
+        //overflow-y: auto;
+        //margin: 0 auto;
+        //list-style: none;
+        //display: grid;
+        //grid-gap: 20px;
+        //grid-template-columns: repeat(2,1fr); // todo: should depend on the size of the screen
+        //align-content: center;
+        //justify-content: center;
         display: grid;
-        grid-gap: 20px;
-        grid-template-columns: repeat(2,1fr); // todo: should depend on the size of the screen
-        align-content: center;
-        justify-content: center;
+        grid-template-columns: 0 0 0;
+        grid-template-columns: 0 0 0;
+        //grid-template-rows: 100px 100px 100px;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: 0 0 0; //50px 100px 100px;
+        //transform: perspective(1000px);
+        perspective: 1000px;
+        transform-style: preserve-3d;
+
+        //width: auto;
+        //width: 588px;
+
+        //overflow-x: scroll;
+        //overflow: hidden;
+        //justify-content: left;
+        //margin-left: 10px;
+        //margin-right: 100px;
+        //justify-content: space-evenly;
+        //padding: 10px 0;
+        border: 1px solid red;
+        height: 500px;
+        width: 588px;
+        //width: 1000px;
+
+        transition: all 5s;
+        //margin-left: -200px; // hacky to sort of center our shit
+        margin: 0 auto;
+
     }
-    li {
-        width: 35vw;
+
+    .tool-type {
+        //flex: 1 1 0;
+        //width: 1000px;
+        border: 1px solid lime;
+        position: relative;
+
+        transition: all 0.5s;
+
+        &:nth-of-type(1){ // top
+            //transform: scale(0.5);
+            //transition: all 2s;
+            //margin-top: 12px;
+            grid-row: 1;
+            grid-column: 2;
+            background-color: red;
+            //z-index: 0;
+            transform: translate3d(0px, -100px, -200px);
+        }
+        &:nth-of-type(2){ // left black
+            //transform: scale(0.8);
+            //margin-top: 8px;
+            grid-row: 2;
+            grid-column: 3;
+            background-color: black;
+            //margin-left: -200px;
+            transform: translate3d(-350px, 0px, -100px);
+        }
+        &:nth-of-type(3){//bottom
+            grid-row: 3;
+            grid-column: 2;
+            background-color: blue;
+            transform: translate3d(0,100px,10px);
+        }
+        &:nth-of-type(4){ // right green
+            //transform: scale(0.8);
+            //margin-top: 16px;
+            grid-row: 2;
+            grid-column: 1;
+            background-color: teal;
+            //margin-left: 200px;
+            transform: translate3d(350px, 0px, -100px);
+        }
+
+        //width: 35vw;
+
+        //        flex: 1;
         padding: 20px;
+        width: calc(588px - 40px); // offset padding
+        height: 300px;
+        margin: 0 20px;
         background-color: $red-twitter;//teal;
+
         .tool-icons{
-            display: flex;
-            justify-content: space-around;
-            //justify-content: center;
+            position: relative;
+            //display: flex;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            //grid-template-rows: repeat(2,1fr);
+            justify-content: center;
         }
         .icon-container{
+            position: relative;
             padding: 10px;
+            margin: 10px auto;;
             background: $white-samurai;
             border-radius: 10px;
             //border: 1px solid yellow;
             img {
+                position: relative;
                 width: 4em;
                 height: 4em;
                 transition-duration: 0.6s;
@@ -49,7 +137,7 @@
     }
 
     #skill-description {
-        //overflow: hidden;
+        overflow: hidden;
         display: block;
         //transition: all 5s;
         //border: 1px solid yellow;
@@ -58,7 +146,6 @@
         background-color: $red-twitter;//orange;
         margin: 20px auto;
         text-align: center;
-
         h5{
             opacity: 0;
             color: $white-samurai;
