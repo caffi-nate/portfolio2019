@@ -147,8 +147,13 @@ section {
   fill: #ffe9c4;
 }
 
+#title-container ul li {
+  padding: 20px;
+}
+
 #title-container ul li .nav-container {
   transition: all 0.3s;
+  text-align: center;
 }
 
 #title-container ul li .nav-container img {
@@ -251,7 +256,6 @@ nav ul {
 }
 
 #projects .project {
-  border-radius: 10px;
   border: 1px solid black;
   flex: 1;
   transition: all 0.5s;
@@ -411,33 +415,35 @@ nav ul {
   justify-content: space-around;
 }
 
-#tools li img {
-  border: 1px solid yellow;
-  width: 4em;
-  height: 4em;
+#tools li .icon-container {
+  padding: 10px;
+  background: #ffe9c4;
+  border-radius: 10px;
 }
 
-#tools li img:hover {
-  transform: scale(1.2) rotate(15deg);
-  -moz-transform: scale(1.2) rotate(15deg);
-  transform: rotate3d(0, 1, 0, 360deg);
+#tools li .icon-container img {
+  width: 4em;
+  height: 4em;
   transition-duration: 0.6s;
+}
+
+#tools li .icon-container:hover img {
+  transform: rotate3d(0, 1, 0, 360deg);
 }
 
 #tools #skill-description {
   display: block;
-  transition: all 1s;
-  height: 3em;
+  height: 5em;
   width: 500px;
   background-color: #e9576a;
   margin: 20px auto;
   text-align: center;
 }
 
-#tools #skill-description p {
-  transition: all 0.2s;
-  color: #ffe9c4;
+#tools #skill-description h5 {
   opacity: 0;
+  color: #ffe9c4;
+  transition: all 0.5s;
   transform: translateY(20px) scale(0.1) rotate3d(0, 1, 0, 270deg);
 }
 

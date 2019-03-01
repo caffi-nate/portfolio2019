@@ -24,9 +24,11 @@
 
         li {
             //border: 1px solid red;
+            padding: 20px;
             .nav-container{
                 //background: black;
                 transition: all 0.3s; // doesn't affect h6 so we have to apply again manually
+                text-align: center;
                 img {
                     margin: 0 auto;
 

@@ -28,33 +28,41 @@
             justify-content: space-around;
             //justify-content: center;
         }
-        img {
-            border: 1px solid yellow;
-            width: 4em;
-            height: 4em;
-            &:hover{
-                @include zoom(1.2);
-                transform: rotate3d(0,1,0, 360deg);
-                //transform:
+        .icon-container{
+            padding: 10px;
+            background: $white-samurai;
+            border-radius: 10px;
+            //border: 1px solid yellow;
+            img {
+                width: 4em;
+                height: 4em;
                 transition-duration: 0.6s;
+            }
+            &:hover{
+                img {
+                    //@include zoom(1.2);
+                    //transform: translateY(10px);
+                    transform: rotate3d(0,1,0, 360deg);
+                }
             }
         }
     }
 
     #skill-description {
+        //overflow: hidden;
         display: block;
-        transition: all 1s;
+        //transition: all 5s;
         //border: 1px solid yellow;
-        height: 3em;
+        height: 5em;
         width: 500px;
         background-color: $red-twitter;//orange;
         margin: 20px auto;
         text-align: center;
 
-        p {
-            transition: all 0.2s;
-            color: $white-samurai;
+        h5{
             opacity: 0;
+            color: $white-samurai;
+            transition: all 0.5s;//0.2s;
             transform: translateY(20px) scale(0.1) rotate3d(0,1,0, 270deg);
         }
     }

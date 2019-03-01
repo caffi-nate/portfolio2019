@@ -88,26 +88,59 @@ setInterval(function scrollBackground(){
 
 const toolTip = document.querySelector('#skill-description');
 const toolP = toolTip.firstElementChild;
-const toolIcons = document.querySelectorAll('.tool-icon');
+const toolIcons = document.querySelectorAll('.icon-container');
+const toolImages = document.querySelectorAll('.tool-icon');
+
+function containsExt(target, node){
+	if (node.contains(target)){
+		console.log("hello");
+		return true;
+	}
+	else if (target == node){
+		console.log("is the node");
+		return true;
+	}
+	else {
+		//console.log(target);
+		//console.log(node);
+	}
+}
 
 function setToolTip(e){
 		// set the tool tip box content to the image's alt tag
-		if(e.target.classList.contains('tool-icon')){
+
+		//if (e.target.contains(toolIcons[0])) console.log("Hello");
+
+		//	console.log()
+		//} console.log("containsExt");
+
+
+		//if(e.target.contains('img')){ // was tool-icon. // icon-container
+		//if (containsExt(e.target, toolIcons[0])){
+		//console.log("contains");
+
 			let toolText = "";
 			for (i = 0; i < toolIcons.length; i++){
-				if (toolIcons[i] == e.target){
-					toolText = e.target.alt;
+				if (containsExt(e.target, toolIcons[i])) {
+					//console.log("Getting alt tag..." + i);
+					toolText = toolImages[i].alt;//e.target.alt;//"Hello";
+					const toolsArray = toolText.split(":");
+					//console.table(arr);
+					//const toolName = tool
+
+					toolP.innerHTML = `${toolsArray[0]}<h6>${toolsArray[1]}</h6>`; //toolText;
+					toolP.classList.add("tool-tip-show");
 				}
 			}
-			toolP.innerHTML = toolText;
-			toolP.classList.add("tool-tip-show");
-		}
+
+
+		//}
 }
 function resetToolTip(e){
 		toolP.classList.remove("tool-tip-show");
 }
 
 
-window.addEventListener('mouseover', setToolTip);
+window.addEventListener('mouseover', setToolTip); // was mouseover
 window.addEventListener('mouseout', resetToolTip)
-window.addEventListener('click', submitClick);
+//window.addEventListener('click', submitClick);
