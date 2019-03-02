@@ -147,4 +147,4 @@ function resetToolTip(e){
 
 window.addEventListener('mouseover', setToolTip); // was mouseover
 window.addEventListener('mouseout', resetToolTip)
-//window.addEventListener('click', submitClick);
+window.addEventListener('click', submitClick);

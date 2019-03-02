@@ -88,8 +88,6 @@ body {
 }
 
 header {
-  position: fixed;
-  z-index: 1000;
   display: grid;
 }
 
@@ -101,7 +99,6 @@ header ul {
 }
 
 section {
-  padding: 20px;
   min-height: 100vh;
   height: 100vh;
 }
@@ -112,16 +109,6 @@ section {
   height: 0;
   width: 0;
   fill: red;
-}
-
-@font-face {
-  font-family: "PoetsenOne";
-  src: url(../fonts/PoetsenOne-Regular.ttf);
-}
-
-@font-face {
-  font-family: "Brushy";
-  src: url(../fonts/bernadette_rough.ttf);
 }
 
 #title-container {
@@ -252,6 +239,7 @@ nav ul {
   padding: 20px 0;
   background: #e86e90;
   overflow: hidden;
+  height: 100vh;
 }
 
 #projects #projects-container {
@@ -388,6 +376,7 @@ nav ul {
 }
 
 #tools {
+  height: 100vh;
   background: #54418b;
 }
 
@@ -400,55 +389,60 @@ nav ul {
   color: #ffe9c4;
 }
 
+#tools #directions {
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#tools #directions > * {
+  display: inline-block;
+  cursor: pointer;
+  margin: 10px;
+}
+
 #tools .tools-container {
   border: 1px solid yellow;
-  display: grid;
-  grid-template-columns: 0 0 0;
-  grid-template-columns: 0 0 0;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-rows: 0 0 0;
-  perspective: 1000px;
-  transform-style: preserve-3d;
+  display: block;
+  width: calc(588px * 2);
+  height: 300px;
+  overflow: hidden;
+  border: 1px solid #000;
+  margin: 0px auto;
+  position: relative;
   border: 1px solid red;
-  height: 500px;
-  width: 588px;
   transition: all 5s;
   margin: 0 auto;
 }
 
 #tools .tool-type {
-  border: 1px solid lime;
-  position: relative;
+  float: left;
+  margin: 0px;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 100%;
   transition: all 0.5s;
-  padding: 20px;
-  width: calc(588px - 40px);
   height: 300px;
-  margin: 0 20px;
   background-color: #e9576a;
 }
 
-#tools .tool-type:nth-of-type(1) {
-  grid-row: 1;
-  grid-column: 2;
-  transform: translate3d(0px, -100px, -200px);
+#tools .tool-type:nth-child(1) {
+  left: 0%;
 }
 
-#tools .tool-type:nth-of-type(2) {
-  grid-row: 2;
-  grid-column: 3;
-  transform: translate3d(-350px, 0px, -100px);
+#tools .tool-type:nth-child(2) {
+  left: 50%;
 }
 
-#tools .tool-type:nth-of-type(3) {
-  grid-row: 3;
-  grid-column: 2;
-  transform: translate3d(0, 100px, 10px);
+#tools .tool-type:nth-child(3) {
+  left: 100%;
 }
 
-#tools .tool-type:nth-of-type(4) {
-  grid-row: 2;
-  grid-column: 1;
-  transform: translate3d(350px, 0px, -100px);
+#tools .tool-type:nth-child(4) {
+  left: 150%;
 }
 
 #tools .tool-type .tool-icons {
@@ -502,8 +496,7 @@ nav ul {
 
 #contact {
   background: #fdaf4b;
-  background-image: url("/images/scrolling-background-test.png");
-  background-image: url("/images/bg-texture01.png");
+  height: 100vh;
 }
 
 footer {

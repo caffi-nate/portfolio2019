@@ -69,8 +69,8 @@ body {
 }
 
 header {
-    position: fixed;
-    z-index: 1000;
+    //position: fixed;
+    //z-index: 1000;
     display: grid;
     ul {
         width: 800px;
@@ -82,7 +82,7 @@ header {
 }
 
 section {
-    padding: 20px;
+    //padding: 20px; // if you want this again, use calc you fuckhead
     min-height: 100vh;
     height: 100vh;
 
