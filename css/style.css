@@ -8,11 +8,6 @@
   src: url(../fonts/bernadette_rough.ttf);
 }
 
-@font-face {
-  font-family: "Coolvetica";
-  src: url(../fonts/coolveticaRG.ttf);
-}
-
 ::-moz-selection {
   /* Code for Firefox */
   color: #000000;
@@ -119,6 +114,16 @@ section {
   fill: red;
 }
 
+@font-face {
+  font-family: "PoetsenOne";
+  src: url(../fonts/PoetsenOne-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Brushy";
+  src: url(../fonts/bernadette_rough.ttf);
+}
+
 #title-container {
   padding: 0;
   width: 100vw;
@@ -133,8 +138,10 @@ section {
 }
 
 #title-container .icon {
+  fill: #ffe9c4;
   width: 50px;
   height: 50px;
+  transition: all 0.3s;
 }
 
 #title-container ul {
@@ -152,7 +159,7 @@ section {
 }
 
 #title-container ul li .nav-container {
-  transition: all 0.3s;
+  transition: all 0.6s;
   text-align: center;
 }
 
@@ -171,16 +178,16 @@ section {
   }
 }
 
-#title-container ul li:hover {
-  fill: #040305;
-}
-
 #title-container ul li:hover div {
   transform: translateY(-20px);
 }
 
 #title-container ul li:hover h6 {
   color: #040305;
+}
+
+#title-container ul li:hover .icon {
+  fill: black;
 }
 
 .section-container {
@@ -423,28 +430,24 @@ nav ul {
 #tools .tool-type:nth-of-type(1) {
   grid-row: 1;
   grid-column: 2;
-  background-color: red;
   transform: translate3d(0px, -100px, -200px);
 }
 
 #tools .tool-type:nth-of-type(2) {
   grid-row: 2;
   grid-column: 3;
-  background-color: black;
   transform: translate3d(-350px, 0px, -100px);
 }
 
 #tools .tool-type:nth-of-type(3) {
   grid-row: 3;
   grid-column: 2;
-  background-color: blue;
   transform: translate3d(0, 100px, 10px);
 }
 
 #tools .tool-type:nth-of-type(4) {
   grid-row: 2;
   grid-column: 1;
-  background-color: teal;
   transform: translate3d(350px, 0px, -100px);
 }
 
@@ -500,7 +503,7 @@ nav ul {
 #contact {
   background: #fdaf4b;
   background-image: url("/images/scrolling-background-test.png");
-  background-width: 200px;
+  background-image: url("/images/bg-texture01.png");
 }
 
 footer {

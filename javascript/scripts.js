@@ -68,10 +68,14 @@ let bgTimer = 0;
 let rotationAngle = 0;
 let contactContainer = document.querySelector('#contact');
 let aboutContainer = document.querySelector("#about-bg");
+//const bgImage = document.getElementById("#contact");
+
+//const spriteWidth = parseInt((getComputedStyle(contactContainer).width).replace(/px/,""));
+//console.log(contactContainer.style.backgroundImage);
 //let title = document.querySelector('#contact h3'); // debug coordinates with this if necessary
 setInterval(function scrollBackground(){
 	//bgTimer = (bgTimer + 0.025) % 100; // works for percents, not px
-	bgTimer = (bgTimer + 0.5) % 200; // later: replace 200 with the image's width
+	bgTimer = (bgTimer + 0.5) % 500;//200; // later: replace 200 with the image's width
 	rotationAngle = (rotationAngle + 0.1) % 360;
 	contactContainer.style.backgroundPosition = `${bgTimer}px ${bgTimer}px`;
 

@@ -1,3 +1,4 @@
+@import "fonts"; // test
 #title-container{
     padding: 0;
     width: 100vw;
@@ -9,9 +10,10 @@
         color: $white-samurai;
     }
     .icon {
-        //fill: $white-samurai;
+        fill: $white-samurai;
         width: 50px;
         height: 50px;
+        transition: all 0.3s; // transition the colour fill
     }
     ul {
         max-width: 480px;
@@ -21,21 +23,25 @@
         margin: 0 auto;
         margin-top: 20px; // hacky: gap after titles
         fill: $white-samurai;
+        //fill: blue;
+
+        a {
+            //fill: red;
+        }
 
         li {
             //border: 1px solid red;
             padding: 20px;
             .nav-container{
                 //background: black;
-                transition: all 0.3s; // doesn't affect h6 so we have to apply again manually
+                transition: all 0.6s; // transition the transform
                 text-align: center;
                 img {
                     margin: 0 auto;
-
                 }
                 h6{
                     color: $white-samurai;//white;
-                    transition: all 0.3s;
+                    transition: all 0.3s; // transition the colour fill
                     @media (max-width: 640px) {
                         display: none; // hide on small screens
                     }
@@ -45,11 +51,17 @@
                 div {
                     transform: translateY(-20px);
                 }
-                fill: $black-samurai;//purple;
+                //fill: $black-samurai;//purple;
                 //transform: rotate3d(0, 1, 0.5, 90deg);
                 h6 {
                     color: $black-samurai;//purple;
                 }
+                .icon{
+                    fill: black;
+                }
+                // a {
+                //     fill: black;
+                // }
             }
         }
     }
