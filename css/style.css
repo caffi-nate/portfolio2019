@@ -424,7 +424,7 @@ nav ul {
   position: absolute;
   top: 0px;
   left: 100%;
-  transition: all 0.5s;
+  transition: 0.5s;
   height: 300px;
   background-color: #e9576a;
 }

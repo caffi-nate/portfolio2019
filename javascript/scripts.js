@@ -57,7 +57,7 @@ loadProjectBackgrounds();
 function submitClick(e){
 	const submitButton = document.querySelector('input[type=submit]');
 	if (submitButton){
-		console.log(submitButton);
+		//console.log(submitButton);
 		e.preventDefault(); // don't reload the page on click, we'll do something else instead
 	}
 }
