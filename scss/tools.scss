@@ -76,7 +76,7 @@
         //margin-right: 100px;
         //justify-content: space-evenly;
         //padding: 10px 0;
-        border: 1px solid red;
+        //border: 1px solid red;
         //height: 500px;
         //width: 588px;
         //width: 1000px;
@@ -107,6 +107,9 @@
         transition: 0.5s;
 
         // let's just do it like them for now...
+
+
+
         &:nth-child(1){
             left: 0%;//-25%;
             //z-index: -1000;
@@ -167,6 +170,9 @@
         height: 300px;
         //margin: 0 20px;
         background-color: $red-twitter;//teal;
+        &:nth-of-type(even){
+            background-color: $orange-samurai;
+        }
 
         .tool-icons{
             position: relative;

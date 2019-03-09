@@ -62,10 +62,6 @@ a {
 body {
     background-color: $purpleBackground;
     color: white;
-    @supports (scroll-snap-type: mandatory){
-        scroll-snap-type: proximity; // allows slight scrolling between sections
-        scroll-snap-type: mandatory; // snaps directly to the right section always
-    }
 }
 
 header {

@@ -41,7 +41,12 @@ function moveLeft(speed){
         let newPosition = (i + itemAt) % tools.length;
         if (i < 0) newPosition = tools.length;
         //tools[i].style.left = `${0.1 * i * containerWidth}px`; // works
-        tools[i].style.left = `${(newPosition * 588) % fullContainerWidth}px`;
+
+
+        //tools[i].style.left = `${(newPosition * 588)% fullContainerWidth}px`;
+        tools[i].style.left = `${((newPosition-1) * 588)}px`;
+
+
 
 
         // hacky fix: makes cards slide behind others on way across
@@ -66,7 +71,14 @@ function moveRight(){
         let newPosition = (i + itemAt) % tools.length;
         if (i > (tools.length-1)) newPosition = 0;
         //tools[i].style.left = `${0.1 * i * containerWidth}px`; // works
-        tools[i].style.left = `${(newPosition * 588) % fullContainerWidth}px`;
+
+
+
+        //tools[i].style.left = `${(newPosition * 588) % fullContainerWidth}px`;
+        tools[i].style.left = `${((newPosition-1) * 588)}px`;
+
+
+
         tools[i].style.zIndex = `-${newPosition}`;
         //console.log(tools[i].offsetLeft / containerWidth);
 

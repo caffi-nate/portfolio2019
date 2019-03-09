@@ -80,13 +80,6 @@ body {
   color: white;
 }
 
-@supports (scroll-snap-type: mandatory) {
-  body {
-    scroll-snap-type: proximity;
-    scroll-snap-type: mandatory;
-  }
-}
-
 header {
   display: grid;
 }
@@ -411,7 +404,6 @@ nav ul {
   border: 1px solid #000;
   margin: 0px auto;
   position: relative;
-  border: 1px solid red;
   transition: all 5s;
   margin: 0 auto;
 }
@@ -443,6 +435,10 @@ nav ul {
 
 #tools .tool-type:nth-child(4) {
   left: 150%;
+}
+
+#tools .tool-type:nth-of-type(even) {
+  background-color: #ff7f1f;
 }
 
 #tools .tool-type .tool-icons {
