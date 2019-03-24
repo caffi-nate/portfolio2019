@@ -64,14 +64,16 @@ module.exports = function(){
             },
           ]
         },
-        {   // for font files, another rule
-            test: /\.(ttf|otf)$/,
+        {
+            test: /\.ttf$/,                              // for font files, another rule. bugged right now.
             use: [
                 {
-                    loader: "file-loader",
+                    loader: "ttf-loader",
                     options: {
-                        outputPath: './Fonts',
-                        name: "[name].[ext]",
+                        //outputPath: './Fonts',
+                        //name: "[name].[ext]",
+                        //name: './Fonts/[name].[ext]', // instead of ./font/[hash].[ext]
+                        name: './font/[hash].[ext]',
                     },
                 },
             ]
