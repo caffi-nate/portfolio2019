@@ -18,14 +18,14 @@ module.exports = function (env, argv) {
     }
     ,
     plugins: [
-      new CleanWebpackPlugin(['dist']),
+      new CleanWebpackPlugin(), // new CleanWebpackPlugin(['dist']), // (old)
       new HtmlWebpackPlugin({
         title: 'Webpack starter project',
         template: path.resolve('./src/index.html')
       }),
       new MiniCssExtractPlugin({
-        filename: "[name].css",
-        chunkFilename: "[id].css"
+        filename: "[name].css"
+        //chunkFilename: "[id].css"
       }),
       new MinifyPlugin()
     ],
@@ -34,7 +34,7 @@ module.exports = function (env, argv) {
         {
           test: /\.scss$/,
           use: [
-            MiniCssExtractPlugin.loader,                // instead of style loader, create this into separate files
+            MiniCssExtractPlugin.loader,
             "css-loader",
             "sass-loader"
           ]
@@ -58,33 +58,24 @@ module.exports = function (env, argv) {
                 outputPath: './images',
                 name: "[name].[ext]",
               },
-            },
-            {
-              loader: 'image-webpack-loader',
-              options: {
-                mozjpeg: {
-                  progressive: false,
-                  quality: 45
-                },
-                // optipng.enabled: false will disable optipng
-                optipng: {
-                  enabled: true,
-                },
-                pngquant: {
-                  quality: '65-90',
-                  speed: 4
-                },
-                gifsicle: {
-                  interlaced: true,
-                  optimizationLevel: 3
-                },
-                // the webp option will enable WEBP
-                webp: {
-                  quality: 20
-                }
-              }
-            },
+            }
           ],
+        },
+        {
+            test: /\.ttf$/,                              // for font files, another rule. bugged right now.
+            use: [
+                {
+                    loader: "ttf-loader",
+                    options: {
+                        //outputPath: './Fonts',
+                        //name: "[name].[ext]",
+                        //name: './Fonts/[name].[ext]', // instead of ./font/[hash].[ext]
+                        //name: './font/[name].[ext]',
+                        outputPath: './font',
+                        name: '[name].[ext]',
+                    },
+                },
+            ]
         },
         {
           test: /\.html$/,

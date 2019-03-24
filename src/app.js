@@ -1,5 +1,5 @@
 // Test
-//import bernadetteRough from 'bernadette_rough.ttf';
+//import bernadette_rough from 'bernadette_rough.ttf';
 
 
 

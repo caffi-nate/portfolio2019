@@ -1,12 +1,16 @@
 // headers type 1
 @font-face {
     font-family: "PoetsenOne";
+    //src: url(../font/PoetsenOne-Regular.ttf);
     src: url(../font/PoetsenOne-Regular.ttf);
+    //src: url("./font/PoetsenOne-Regular.ttf") format('truetype');
 }
 
 @font-face {
-    font-family: "Brushy";
+    font-family: "Bernadette";
     src: url(../font/bernadette_rough.ttf);
+    //src: url("./font/bernadette_rough.ttf") format('truetype');
+    font-weight: bold;
 }
 
 // main body typeface

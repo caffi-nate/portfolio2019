@@ -2,6 +2,10 @@
 @import "mixins";
 @import "fonts";
 
+
+
+
+
 //custom style any time the user tries to highlight text, removes background colour
 @include selection(#000000,rgba(1,1,1,0));
 
@@ -14,13 +18,14 @@
 
 h1 {
     font-size: 5em;
+    font-family: "Comic Sans MS", "PoetsenOne", sans-serif;
     font-family: "PoetsenOne", sans-serif;
     line-height: 1em; // was 0.5 for some reason?
     text-align: center;
 }
 h2 {
     font-size: 3em;
-    font-family: "Brushy", sans-serif;
+    font-family: "Bernadette", sans-serif;
     text-align: center;
     line-height: 1em;
 }
