@@ -53,7 +53,7 @@ module.exports = function(){
           }
         },
         {
-          test: /\.(jpg|jpeg|gif|png|svg|webp)$/,           // for any image files, use file-loader
+          test: /\.(jpg|jpeg|gif|png|svg|webp|ico)$/,           // for any image files, use file-loader
           use: [
             {
               loader: "file-loader",
@@ -63,6 +63,18 @@ module.exports = function(){
               },
             },
           ]
+        },
+        {   // for font files, another rule
+            test: /\.(ttf|otf)$/,
+            use: [
+                {
+                    loader: "file-loader",
+                    options: {
+                        outputPath: './Fonts',
+                        name: "[name].[ext]",
+                    },
+                },
+            ]
         },
         {
           test: /\.html$/,
