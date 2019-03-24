@@ -50,7 +50,7 @@ module.exports = function (env, argv) {
           }
         },
         {
-          test: /\.(jpg|jpeg|gif|png|svg|webp)$/,
+          test: /\.(jpg|jpeg|gif|png|svg|webp|ico)$/,
           use: [
             {
               loader: "file-loader",
@@ -65,7 +65,7 @@ module.exports = function (env, argv) {
             test: /\.ttf$/,                              // for font files, another rule. bugged right now.
             use: [
                 {
-                    loader: "ttf-loader",
+                    loader: "file-loader",
                     options: {
                         //outputPath: './Fonts',
                         //name: "[name].[ext]",

@@ -53,8 +53,8 @@ module.exports = function(){
           }
         },
         {
-          test: /\.(jpg|jpeg|gif|png|svg|webp|ico)$/,           // for any image files, use file-loader
-          use: [
+            test: /\.(jpg|jpeg|gif|png|svg|webp|ico)$/,           // for any image files, use file-loader
+            use: [
             {
               loader: "file-loader",
               options: {
@@ -62,7 +62,7 @@ module.exports = function(){
                 name: "[name].[ext]",
               },
             },
-          ]
+            ]
         },
         {
             test: /\.ttf$/,                              // for font files, another rule. bugged right now.
