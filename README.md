@@ -1,10 +1,11 @@
 Portfolio 2019:
 
-A simple Wordpress site to showcase my web/game design work
+Simple site to showcase my web/game design work
+
+<a href="https://caffi-nate.github.io/portfolio2019/src/">Live Site Test</a>
 
 
 
 
 Known Bugs and To-Do List:
-- fix favicon functionality again
-- fix font functionality post Webpack installation
+- fix font functionality with Webpack installation
