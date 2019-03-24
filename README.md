@@ -2,7 +2,7 @@ Portfolio 2019:
 
 Simple site to showcase my web/game design work
 
-<a href="https://caffi-nate.github.io/portfolio2019/src/">Live Site Test</a>
+<a href="https://caffi-nate.github.io/portfolio2019/dist/">Live Site Test</a>
 
 
 
