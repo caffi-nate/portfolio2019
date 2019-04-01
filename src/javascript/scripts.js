@@ -28,17 +28,14 @@ let aboutContainer = document.querySelector("#about-bg");
 //const spriteWidth = parseInt((getComputedStyle(contactContainer).width).replace(/px/,""));
 //console.log(contactContainer.style.backgroundImage);
 //let title = document.querySelector('#contact h3'); // debug coordinates with this if necessary
-setInterval(function scrollBackground(){
-	//bgTimer = (bgTimer + 0.025) % 100; // works for percents, not px
-	bgTimer = (bgTimer + 0.5) % 500;//200; // later: replace 200 with the image's width
-	rotationAngle = (rotationAngle + 0.1) % 360;
-	contactContainer.style.backgroundPosition = `${bgTimer}px ${bgTimer}px`;
-
-	// rotating background: about page
-	aboutContainer.style.transform = `rotate(${rotationAngle}deg)`;
-
-	//title.innerHTML = Math.floor(bgTimer); // bug: jerky after we hit 100
-}, 10);
+// setInterval(function scrollBackground(){
+// 	bgTimer = (bgTimer + 0.5) % 500;//200; // later: replace 200 with the image's width
+// 	rotationAngle = (rotationAngle + 0.1) % 360;
+// 	contactContainer.style.backgroundPosition = `${bgTimer}px ${bgTimer}px`;
+//
+// 	// rotating background: about page
+// 	aboutContainer.style.transform = `rotate(${rotationAngle}deg)`;
+// }, 10);
 
 
 

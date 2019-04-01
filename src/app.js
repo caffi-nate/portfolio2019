@@ -19,6 +19,12 @@ import projectImage1 from "./images/web-project-1.png";
 import projectImage2 from "./images/web-project-2.png";
 
 
+
+import favicon32 from "./images/favicon-32x32.png";
+import faviconIco from "./images/favicon.ico";
+import favicon16 from "./images/favicon-16x16.png";
+
+
 //import PoetsenOne from 'PoetsenOne-Regular.ttf';
 
 
