@@ -42,36 +42,29 @@ let aboutContainer = document.querySelector("#about-bg");
 const subtitle = document.querySelector('#design-type-box');
 let textScrollAmount = 1;
 
-setInterval(function scrollSubtitle(){
-	//console.log("hello");
-
-	textScrollAmount+=1;
-	if (textScrollAmount > 3) textScrollAmount = 0;
-	const scrollVar = textScrollAmount * 100;
-
+function scrollTitle(){
+	const scrollVar = textScrollAmount * 100;//) % 300;
+	const children = subtitle.children;
 	let scrollSpeed = 5;
 	if (textScrollAmount == 0){
 		scrollSpeed = 0;
-		//textScrollAmount++;
 	}
-
-
-
-	const children = subtitle.children;
-
-	//console.log(subtitle.children);
-
 	for (i = 0; i < children.length; i++){
-		//console.log(i);
 		children[i].style.transform = `translateY(${scrollVar}%)`;
 		children[i].style.transition = `all 0.${scrollSpeed}s`;
 	}
-	console.log(scrollVar);
+}
 
-	//subtitle.h2.style.marginTop = -300%;
-	//console.log(subtitle);
-
+setInterval(function scrollSubtitle(){
+	textScrollAmount+=1;
+	if (textScrollAmount > 3) textScrollAmount = 0;
+	scrollTitle();
 }, 2500);
+
+subtitle.addEventListener('transitionend', () => {
+	if (textScrollAmount == 3) textScrollAmount = 0;
+	scrollTitle();
+});
 
 
 setTimeout(function bounceIn(){
