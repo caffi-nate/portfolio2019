@@ -45,13 +45,13 @@ let textScrollAmount = 1;
 function scrollTitle(){
 	const scrollVar = textScrollAmount * 100;//) % 300;
 	const children = subtitle.children;
-	let scrollSpeed = 5;
+	let scrollSpeed = 2;
 	if (textScrollAmount == 0){
 		scrollSpeed = 0;
 	}
 	for (i = 0; i < children.length; i++){
 		children[i].style.transform = `translateY(${scrollVar}%)`;
-		children[i].style.transition = `all 0.${scrollSpeed}s`;
+		children[i].style.transition = `all 0.${scrollSpeed}s cubic-bezier(0.79, 0.76, 0.21, 1.39)`;
 	}
 }
 
